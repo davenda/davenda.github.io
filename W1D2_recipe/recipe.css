@@ -22,3 +22,24 @@ h2{
 a{
     color: #A4A400;
 }
+
+.tooltip {
+  display: inline-block;
+  border-bottom: 1px dotted black; 
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  height: 20px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
