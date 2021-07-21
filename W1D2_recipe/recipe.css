@@ -13,7 +13,7 @@ h1, h2, h3{
 }
 h1{
     font-size: 22pt;
-    font-style: bold;
+    font-weight: bold;
     text-align: center;
 }
 h2{
@@ -65,7 +65,7 @@ a{
     float:left;
     font-weight: bold;
 }
-#quotation{
+.quotation{
     font-style: italic;
     background-color: #FFFFA8;
 }
