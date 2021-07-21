@@ -17,3 +17,30 @@ li{
     color:#FEA7B0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+a:link {
+    text-decoration: none;
+    color: green;
+}
+  
+a:visited {
+    color: rgb(169, 169, 212);
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+a:active {
+    text-decoration: underline;
+}
+p::first-letter {
+    font-size: 1.5em;
+}
+dt{
+    color: yellow;
+}
+dd{
+    color: yellowgreen;
+    font-style: oblique;
+}
