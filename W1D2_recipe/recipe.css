@@ -3,6 +3,7 @@ body{
     color: #404040;
     font-size: 11pt;
     font-family: Georgia, Garamond, sans-serif;
+    display: inline;
 }
 h1, h2, h3{
     color: #A4A400;
@@ -41,5 +42,21 @@ a{
 }
 
 .tooltip:hover .tooltiptext {
-  visibility: visible;
+  visibility: visible;  
+}
+#deleted{
+    display: inline;
+    text-align: center;
+    text-decoration: line-through;
+}
+#block_container
+{
+    text-align:left;
+}
+#bloc1, #deleted, #bloc3
+{
+    display:inline;
+}
+#copyright{
+    font-family: monospace;
 }
