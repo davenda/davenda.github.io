@@ -1,81 +1,15 @@
-body{
-    background-image: url("https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg");
-    /* background-color: white; */
-    color: #404040;
-    font-size: 11pt;
-    font-family: Georgia, Garamond, sans-serif;
-}
-h1, h2, h3{
-    color: #A4A400;
-    background-color: #F0F0F0;
-    font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
-    text-decoration: underline;
-}
-h1{
-    font-size: 22pt;
-    font-style: bold;
-    text-align: center;
-}
-h2{
-    text-align: left;
-    font-size: 18pt;
-}
-a{
-    color: #A4A400;
-}
-
-.tooltip {
-  display: inline-block;
-  border-bottom: 1px dotted black; 
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  height: 20px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
- 
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;  
-}
-#deleted{
-    display: inline;
-    text-align: center;
-    text-decoration: line-through;
-}
-#block_container
-{
-    text-align:left;
-}
-#bloc1, #deleted, #bloc3
-{
-    display:inline;
-}
-#copyright{
-    font-family: monospace;
-}
-.emphasize
-{
-    float:left;
-    font-weight: bold;
-}
-#quotation{
-    font-style: italic;
-    background-color: #FFFFA8;
-}
-
-li{
-    list-style-image: url("pie_icon.gif");
-}
-boldword{
-    font-weight: bold;
-}
-#block_summary{
-    line-height: 50%;
+body { 
+    background-color: yellow; 
+    font-size: 50pt;
+    color: magenta; 
+} 
+p { 
+      color: orange; 
+} 
+.central, .item{ 
+    color: green;  
+} 
+#item { 
+    background-color: cyan; 
+    font-size: 50pt;
 }

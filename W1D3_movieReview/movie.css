@@ -1,0 +1,107 @@
+/* Name: Dawit Diriba
+ID: 612712
+The Assignment was great but it takes a lot of time playing around with those contents to get the result */
+body {
+    margin: 0;
+    background-image: url(background.png);
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+    
+}
+.topbanner {
+    background-image: url(bannerbg.png);
+    margin-top: -16px;
+    text-align: center;
+}
+h1.mheader {
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Verdana, Tahoma;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+.middle {
+    width: 800px;
+    margin: 0 auto;
+    border: 4px gray solid;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.right {
+    width: 250px;
+    float: right;
+    background-color: #A2B964;
+    overflow: hidden;
+    font-family: arial;
+    font-size: 9pt;
+}
+.left {
+    width: 550px;
+    float: left;
+}
+p#pager {
+    background-color: #A2B964;
+    clear: both;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+.leftbanner span {
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+    position: absolute;
+}
+.leftCrit, .rightcrit {
+    width: 47%;
+    margin: 0 1.5%;
+    float: left;
+}
+.leftbanner {
+    background-image: url(rbg.png);
+    height: 83px;
+}
+p.crit {
+    font-size: 9pt;
+    font-weight: bold;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #E8DC9B;
+    padding: 8px;
+    overflow: hidden;
+    clear: both;
+}
+p.crit img {
+    float: left;
+    padding-right: 5px;
+}
+p.reviwer {
+    font-size: 9pt;
+    margin-bottom: 20pt;
+    overflow: hidden;
+}
+p.reviwer img {
+    float: left;
+    padding-left: 5px;
+}
+.right dl {
+    padding: 10pt;
+    margin: 0;
+}
+.right dt {
+    font-weight: bold;
+}
+.right dd {
+    margin-bottom: 10pt;
+}
+.right dd ul {
+    list-style: none;
+    padding: 0;
+}
+.validator {
+    float: right;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+	opacity: 50%
+}
