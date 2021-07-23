@@ -1,9 +1,13 @@
 body{
     font-size: 30px;
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    font-size: 12pt;
 }
 .header{
     background-color: #acd7e5;
-    height: 40px;
+    font-weight: bold;
+    padding: 7pt;
 }
 .footer{
     background-color: #2d4d4d; 
@@ -21,15 +25,15 @@ body{
 }
 .column1{
     background-color: #a9a9a9;
-    flex: 1 1;
+    flex: 1 1 250px;
 }
 .column2{
     background-color: #b9b9b9;
-    flex: 2 1 600px;
+    flex: 2 1 300px;
 }
 .column3{
     background-color: #cbcbcb;
-    flex: 1 1;
+    flex: 1 1 250px;
 }
 
 .menu{
@@ -37,7 +41,7 @@ body{
     background-color: #2d4d4d;
 }
 .menu > div{
-    width: 140px;
+    padding: 8pt;
     background-color: #2d4d4d; 
     color: white;
     border-right: 1px solid black

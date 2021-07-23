@@ -1,0 +1,42 @@
+#footer{
+    background-color: #2d4d4d;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+ 
+#header{
+
+    background-color: #acd7e5;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+}
+ 
+#menu{
+    background-color: #134242;
+    color: white;
+    height: 40px;
+}
+ 
+#column1{
+    background-color: #a9a9a9;
+    height: 200px;
+}
+ 
+#column2{
+    background-color: #b9b9b9;
+    height: 200px;
+}
+ 
+#column3{
+    background-color: #cbcbcb;
+    height: 200px;
+}
+ 
+@media only screen and (max-width: 768px) {
+    #column2 {
+        order: 3;
+    }
+}
