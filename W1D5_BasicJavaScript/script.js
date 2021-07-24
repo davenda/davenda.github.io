@@ -98,4 +98,4 @@ console.log("Expected output of sum([2, 3, 5, 6]) is 16  " +  myFunctionTest(16,
 console.log("Expected output of multiply([2, 3, 5, 6]) is 180  " +  myFunctionTest(180, multiply([2, 3, 5, 6])));
 console.log("Expected output of reverse(\"jag testar\") is ratset gaj  " +  myFunctionTest("ratset gaj", reverse("jag testar")));
 console.log("Expected output of findLongestWord([\"hello\", \"hey\", \"bye\", \"someone\", \"name\"]) is 7  " +  myFunctionTest(7, findLongestWord(["hello", "hey", "bye", "someone", "name"])));
-console.log("Expected output of filterLongWords([\"hello\", \"hey\", \"bye\", \"someone\", \"name\"], 3) is \"hello\", \"someone\", \"name\"  " +  myFunctionTest(["hello", "someone", "name"], filterLongWords(["hello", "hey", "bye", "someone", "name"], 3)));
+console.log("Expected output of filterLongWords([\"hello\", \"hey\", \"bye\", \"someone\", \"name\"], 3) is \"hello\", \"someone\", \"name\"  " +  myFunctionTest(["hello", "someone", "name"].toString, filterLongWords(["hello", "hey", "bye", "someone", "name"], 3).toString));
