@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script defer src="script.js" ></script>
-</head>
-<body>
-    
-Look in the Chrome developer console to see the output. CTRL_SHIFT_J <br />
-Or on Firefox with CTRL_SHIFT_K
-
-</body>
+ <head>
+ <title>Functional Programming</title>
+ <meta charset="utf-8" />
+ 
+ <link
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
+ />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+ <script src="script.js"></script>
+ </head>
+ 
+ <body>
+ <div id="mocha"></div>
+ <script>
+ mocha.run();
+ </script>
+ </body>
 </html>
