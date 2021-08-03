@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W2D2 Quiz</title>
+    <meta charset="utf-8">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script> -->
+    <script>
+        // x = 1;
+        // var a = 5;
+        // var b = 10;
+        // var c = function(a, b, c){
+        //     console.log(x);
+        //     console.log(a);
+        //     var f = function(a, b, c){
+        //         b = a;
+        //         console.log(b);
+        //         b = c; 
+        //         var x = 5;
+        //     }
+        //     f(a, b, c);
+        //     console.log(b);
+        //     var x = 10;
+        // }
+        // c(8, 9, 10);
+        // console.log(b);
+        // console.log(x);
+
+
+        // var x = 9;
+        // function myFunction(){
+        //     return x * x;
+        // }
+        // console.log(myFunction());
+        // x = 5;
+        // console.log(myFunction())
+
+
+
+        // var foo = 1;
+        // bar()
+        // function bar(){
+        //     if(!foo){
+        //         var foo = 10;
+        //     }
+        //     console.log(foo);
+        // }
+        // // bar();
+        // console.log(foo);
+
+
+
+        // var x = 5;
+        // var y = 7;
+        // function a() {
+        //     function b() {
+        //         console.log(`1: x=${x} y=${y}`);
+        //         y = 10;
+        //         return function c(y) {
+        //             console.log(`2: x=${x} y=${y}`);
+        //         }
+        //     }
+        //     console.log(`3: x=${x} y=${y}`)
+        //     var z = b()
+        //     // var x = 10;
+        //     // console.log(`6: x=${x} y=${y}`)
+        //     b()(20);
+        // }
+        // // console.log(`4: x=${x} y=${y}`);
+        // a();
+        // console.log(`5: x=${x} y=${y}`);
+
+
+
+        // var a = {
+        // name: "",
+        // log: function() {
+        //         // var self = this;
+        //         this.name = "Hello";
+        //         console.log(this.name); //Hello
+        //         var setFrench = newname => this.name = newname;
+        //         setFrench("Bonjour");
+        //         console.log(this.name); //Bonjour
+        //     },
+        // };
+        // a.log();
+
+
+
+        // const me = {
+        //     first: 'Tina',
+        //     last: 'Xing',
+        //     getFullName: function(){
+        //         return this.first + " " + this.last;
+        //     }
+        // }
+        // const logger = function(height, weight){
+        //     console.log(this.getFullName() + height + " " + weight);
+        // }
+        // const logMe = logger.bind(me);
+        // logMe('180cm', '70Kg');
+        // logger.call(me, '180', '70Kg');
+
+        // function multiply(a, b){
+        //     return a * b;
+        // }
+        // const mulByTwo = multiply.bind(2, null);
+        // console.log(mulByTwo(null, 3));
+
+        // const count = (function(){
+        //     let counter = 0;
+        //     const adder = function(){
+        //         counter += 1;
+        //     };
+        //     const reset = function(){
+        //         counter = 0;
+        //     };
+        //     function value1(){
+        //         return counter;
+        //     };
+        //     return {
+        //         add: adder,
+        //         reset: reset,
+        //         value: function(){
+        //             return counter;
+        //         }
+        //     }
+        // })();
+        // make_adder.add();
+        // // // add.reset();
+        // // add.make_adder(4);
+        // console.log(make_adder.value());
+
+
+        // const make_adder1 = (function(inc){
+        //     let counter = 0;
+        //     const adder = function(){
+        //         counter += inc;
+        //     };
+        //     const reset = function(){
+        //         counter = 0;
+        //     };
+        //     function value1(){
+        //         return counter;
+        //     };
+        //     return {
+        //         add: adder,
+        //         reset: reset,
+        //         value: function(){
+        //             return counter;
+        //         }
+        //     }
+        // });
+        // var add5 = make_adder1(5);
+        // add5();
+        // // // add.reset();
+        // // add.make_adder(4);
+        // console.log(add5());
+
+
+    // const make_adder = (function (inc) {
+    //     var counter = 0;
+    //     return function(){
+    //         return counter += inc;
+    //     };
+    // });
+    // var add5 = make_adder(5);
+    // add5(); add5();
+    // console.log(add5());
+    // var add7 = make_adder(7);
+    // add7(); add7();
+    // console.log(add7());
+    // console.log(counter);
+
+
+
+
+        // const counter = (function() {
+        //     let privateCounter = 0; //private data
+        //     function changeBy(val) { //private inner function
+        //         privateCounter += val;
+        //     }
+        //     return {
+        //         increment: function() { // three public functions are closures that share the same environment.
+        //             changeBy(1);
+        //         },
+        //         decrement: function() {
+        //             changeBy(-1);
+        //         },
+        //         value: function() {
+        //             return privateCounter;
+        //         }
+        //     }
+        // })();
+
+        // console.log(counter.value()); /* Alerts 0 */
+        // counter.increment();
+        // counter.increment();
+        // console.log(counter.value()); /* Alerts 2 */
+        // counter.decrement();
+        // console.log(counter.value()); 
+
+
+        // const employee = (function(){
+        //     const name = "";
+        //     const age = 0;
+        //     const salary = 0;
+        //     const getName = function(){
+        //         return name;
+        //     };
+        //     const getAge = function(){
+        //         return age;
+        //     };
+        //     const getSalary = function(){
+        //         return salary;
+        //     };
+        //     return{
+        //         setName: function(n){
+        //             name = n;
+        //         },
+        //         setAge: function(a){
+        //             age = a;
+        //         },
+        //         setSalary: function(s){
+        //             salary = s;
+        //         },
+        //         increaseSalary: function(percentage){
+        //             salary = getSalary() + getSalary() * percentage / 100;
+        //         },
+        //         incrementAge: function(){
+        //             age = getAge + 1;
+        //         }
+        //     }
+        // });
+        // var helper = function(n) {
+        //     return function() {
+        //         return n;
+        //     }
+        // }
+        // var funcs = [];
+        // for (var i = 0; i < 5; i++) {
+        //     funcs[i] = i;
+        // }
+        // console.log(funcs[0]);
+        // console.log(funcs[1]);
+        // console.log(funcs[2]);
+        // console.log(funcs[3]);
+        // console.log(funcs[4]);
+        // var employee = (function (name) {
+        //     // let name;
+        //     var age = 5;
+        //     var salary = 200;
+        //     let setAge = function (a) {
+        //         age = a;
+        //     };
+        //     let setSalary = function (s) {
+        //         salary = s;
+        //     };
+        //     let setName = function (n) {
+        //         name = n;
+        //     };
+        //     let getAge = function () {
+        //         return age;
+        //     };
+        //     let getSalary = function () {
+        //         return salary;
+        //     };
+        //     let getName = function () {
+        //         return name;
+        //     };
+        //     let increaseSalary = function(percentage){
+        //         setSalary(getSalary + getSalary * percentage / 100);
+        //     };
+        //     let incrementAge = function () {
+        //         console.log(getAge);
+        // //         return setAge(getAge + 1);
+        //     };
+        //     return {
+        //         getSalary: getSalary,
+        //         getAge: getAge,
+        //         setAge: setAge,
+        //         setSalary: setSalary,
+        //         setName: setName,
+        //         increaseSalary: increaseSalary,
+        //         incrementAge: incrementAge
+        //     };
+        // });
+        // employee.extension = function(){
+        //     employee.address = "hello";
+        //     employee.setAddress = function(ad) {
+        //         address = ad;
+        //     };
+        //     employee.getAddress = function() {
+        //         return address;
+        //     };
+        //     return{
+        //         getAddress: getAddress
+        //     }
+        // }
+        // const employee1 = employee("D", 12, 200);
+        // console.log(employee1.getSalary());
+        // employee1.setAge(2);
+        // // employee1.incrementAge();
+        // // console.log(employee1.g);
+        // console.log(employee1.getAge());
+        // console.l
+
+        // var x = 5;
+        // var y = test();
+        // var b = { x: 4 };
+        // var z = y.bind(b);
+        // z();
+        // function test() {
+        //     console.log(this);
+        //     console.log(x);
+        //     var z = function() {
+        //         var x = 3;
+        //         console.log(this);
+        //         console.log(this.x);
+        //     }
+        //     var x = 8;
+        //     z();
+        //     return z;
+        // }
+        // let animal = {eat: true}
+        // let rabbit = {jump: true}
+        // rabbit.__proto__ = animal
+        // console.log(rabbit.eat);
+            // console.log(parseInt("98.3423lkadjf 42 aldkfjasdjf))"))
+        // const b = [1, 3, 5, 3, 3].map((elem) => elem + 3);
+        // console.log(b);
+        // console.log(square(3));
+        // function square(num){
+        //     return num * num;
+        // }
+        // console.log(square.name)
+
+
+        // const factorial = function fac(n){
+        //     return n < 2 ? 1 : n * fac(n - 1);
+        // }
+        // console.log(factorial(3));
+        // function echo(){
+        //     console.log('come on');
+        // }
+        // function changeColor(){
+        //     document.getElementById('h').innerHTML = "<h1>red</h1>";
+        // }
+        
+        // function swapText() {
+        //     var span = document.getElementById("output2");
+        //     var textBox = document.getElementById("textbox2");
+        //     var temp = span.innerHTML;
+        //     span.innerHTML = textBox.value;
+        //     textBox.value = temp;
+        // // }
+        // function okayClick() {
+        //     console.log("Here")
+        // }
+        // // document.getElementById("ok").onclick = okayClick;
+        // // okButton.onclick = okayClick;
+        // function a() {
+        //     function b() {
+        //         console.log(x);
+        //         x = 10;
+        //         console.log(x);
+        //     }
+        //     b();
+        //     console.log(x);
+        // }
+        // a();
+        // console.log(x);
+        // function Person(){
+        //     console.log(this);
+        //     this.university = 'MUM';
+        //     this.year = '2016';
+        // }
+        var a = 12;
+        var b = 8;
+        var z = x(b);
+        z(a, b);
+        function x(a){
+            console.log(`1: ${this} ${a} ${b}`);
+            var b = function(b){
+                if(a <= 10){
+                    a = a*2;
+                }
+                console.log(`2: ${this} ${a} ${b}`);
+            }
+            console.log(`3: ${this} ${a} ${b}`);
+            return b.bind({a: 5, b: 20});
+        }
+    </script>
+    <style>
+        body{
+            color: yellow;
+            background-color: green;
+        }
+        .things, em{
+            color: red;
+        }
+        .some{
+            background-color: blue;
+            color: purple;
+        }
+        h1{
+            background-color: orange;
+        }
+        span, dl{
+            color: brown;
+        }
+        #there{
+            background-color: white;
+        }
+        dt{
+            background-color: pink;
+        }
+        dl dd {
+            color: black
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="some">First</h1>
+    <dl>
+        <dt class="things">
+            <span>Second</span>
+        </dt>
+        <dd>Third</dd>
+        <dt id="there">Fourth</dt>
+        <dd><em>Fifth</em></dd>
+    </dl>
+
+
+    <!-- <div id="mocha"></div>
+    <script>
+        // mocha.run();
+
+    </script> -->
+    <!-- <element attributes onclick="function();"></element> -->
+    <!-- <button id="ok">Click me!</button>
+    <script>
+        
+        function okayClick() {
+            console.log("Here")
+        }
+        document.getElementById("ok").onclick = okayClick;
+         -->
+    <!-- </script> -->
+    <!-- <div id="h">Hello</div>
+    <button onclick="swapText();">Click me!</button>
+    <span id="output2">Hello</span>
+    <input id="textbox2" type="text" value="Goodbye" /> -->
+
+</body>
+
+</html>

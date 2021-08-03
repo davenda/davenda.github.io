@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>W2D4 Q2</title>
+        <meta charset="utf8">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <script>
+
+            // const VALIDATOR = (function(){
+            //     const validateFirstName = function(){
+            //         if(document.getElementById("first").value === ""){
+            //             return false;
+            //         }
+            //         return true;
+            //     };
+            //     const validateLastName = function(){
+            //         if(document.getElementById("second").value === ""){
+            //             return false;
+            //         }
+            //         return true;
+            //     };
+            //     const validate = function(){
+            //         return validateFirstName() && validateLastName();
+            //     }
+            //     return{
+            //         validate: validate
+            //     }
+            // })();
+            // console.log(VALIDATOR.validate());
+            // // const validateFirstName = validator("hy");
+            // window.onload = function(){
+                
+            // }
+//             "use strict";
+
+//             var b = 5;
+//             var c = hello(b);
+//             var a = 1000;
+//             var d = {a: 50, b: 90};
+//             console.log(c.apply(d));
+//             function hello(a) {
+//                 console.log(this);
+//                 a = a * 2;
+//                 console.log(bye())
+//                 function bye() {
+//                     console.log(this);
+//                     console.log(b);
+//                     console.log(this.b);
+//                     return a;
+//                 }
+//                 var b = 100;
+//                 return bye;
+// }
+
+// function Computer(ram, cpu, storage){
+//     this.ram = ram;
+//     this.cpu = cpu;
+//     this.storage = storage;
+// }
+// Computer.prototype.runProgram = function(program){
+//     console.log("running:" + program);
+// }
+// function Laptop(ram, cpu, storage, battery){
+//     this.ram = ram;
+//     this.cpu = cpu;
+//     this.storage = storage;
+//     this.battery = battery;
+// }
+// Laptop.prototype.__proto__ = Computer.prototype;
+// Laptop.prototype.carryAround = function(){
+//     console.log("carrying laptop:  cpu" + this.cpu +" ram: " + this.ram + " storage: " + this.storage + " battery: " + this.battery);
+// }
+// var laptop = new Laptop(3, 4, 3, 3);
+// laptop.runProgram("Hello");
+
+
+// const CAR = (function(){
+// var speed = 0;
+// var direction = 0;
+// function gasPaddleFunc(){
+// if(speed <= 125){
+// speed += 5;
+// }
+// }
+// function breakFunc(){
+// if(speed >= 0){
+// speed -= 10;
+// }
+// }
+// function turnLeftFunc(degree){
+// direction -= degree;
+// }
+// function turnRightFunc(degree){
+// direction += degree;
+// }
+// function statusFunc(){
+// console.log("The car is driving direction " + direction + " at " + speed + "mph");
+// }
+// return{
+// gasPaddle: gasPaddleFunc,
+// break: breakFunc,
+// turnLeftFunc: turnLeftFunc,
+// turnRightFunc: turnRightFunc,
+// status: statusFunc
+// }
+// }
+
+// const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+// // names.forEach(e => console.log(e));
+// for(let i of names){
+//     console.log(i);
+// }
+
+// function findMax() {
+//   var max = -Infinity;
+//   for (let i = 0; i < arguments.length; i++) {
+//     if (arguments[i] > max) {
+//       max = arguments[i];
+//     }
+//   }
+//   return max;
+// }
+// const max1 = findMax(1, 123, 500, 115, 66, 88);
+// const max2 = findMax(3, 6, 8);
+// console.log("max1: " + max1);
+// console.log("max2: " + max2);
+// const countedNames = names.reduce(function(allNames, name) {
+//   if (name in allNames) {
+//     allNames[name]++;
+//   } else {
+//     allNames[name] = 1;
+//   }
+//   return allNames;
+// }, {});
+
+// console.log(JSON.stringify(countedNames));
+// let a = [1, 2, 3];
+// let b = "dog";
+// let c = [42, "cat"];
+// // console.log(a.concat(b, c));
+// // console.log([a, b, ...c]);
+
+// const ob1 = { foo: 'baz', x: 42};
+// const ob2 = { foo: 'baz', y: 13};
+// const merge = { ...ob1, ...ob2};
+// console.log(merge);
+// const a = new RegExp("^[\+]?[0-9]{0,3} ?[0-9]{3} ?[0-9]{3} ?[0-9]{4}");
+// console.log(a.test("+132 339 893 4958"))
+function makeFunc() {
+ let name = "Mozilla"; //local to makeFunc
+ function displayName() {
+ console.log(name);
+ }
+ name = "hello";
+ return displayName;
+}
+const myFunc = makeFunc();
+myFunc();
+
+
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <form action="http://www.google.com/search">
+            <div> Let's search Google 
+                <input name="q" />
+                <input type="submit" value="Bootstrap"/> 
+            </div>
+        </form>
+        <div class="hello">
+            <p>Hellllllo</p>
+        </div>
+    </body>
+</html>
