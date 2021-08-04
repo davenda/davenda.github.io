@@ -1,0 +1,57 @@
+body{
+    margin: 30px;
+    background-image: url("https://a-static.besthdwallpaper.com/keep-it-simple-wallpaper-30135_L.jpg");
+    background-position: center;
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+        'left right right';
+    border-radius: 50px;
+    background-color: rgba(190, 195, 209, 0.377);
+}
+.left{
+    grid-area: "left";
+    padding: 20px;
+    margin: 40px auto;
+}
+.right{
+    grid-area: "right";
+    padding: 50px 50px 50px 10px;
+    margin: auto 90px auto 10px;
+}
+.left > img{
+    border: solid 2px gray;
+    border-radius: 10px;
+}
+.circle{
+    width: 700px;
+    background-color: tomato;
+    border-radius: 400px;
+    padding: 400px;
+    position: fixed;
+    top: -700px;
+    left: -100px;
+}
+h1{
+    text-align: center;
+}
+li{
+    font-size: 25px;
+    line-height: 35px;
+    list-style-type:square;
+    color: yellow;
+}
+a:visited, a:link{
+    color:yellow
+}
+@media only screen and (max-width: 880px) {
+    .container{
+        display: grid;
+        grid-template-areas: 
+            'left'
+            'right';
+        border-radius: 50px;
+        background-color: rgba(190, 195, 209, 0.377);
+    }
+}
