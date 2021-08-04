@@ -1,33 +1,33 @@
 $(document).ready(function () {
     var started;
+    var lost = false;
     $(".boundary").on("mouseover", failed);
     $("#end").on("mouseover", function () {
-        if (started) {
+        if (started && !lost) {
             $("#status").text("You Win! :]");
         }
-    });
-    $("#end").on("mouseleave", function () {
-        if (started) {
-            reset();
+        else if(started){
+            $("#status").text("Sorry, You Lost. :[");
         }
+        started = false;
     });
     $("#start").on("click", function () {
+        reset();
         if (!started) {
             started = true;
-        } else {
-            reset();
         }
     });
     $("#maze").on("mouseleave", failed);
     function failed() {
         if (started) {
-            $("#status").text("Sorry, You Lost. :[");
+            lost = true;
             $(".boundary").not(".example").addClass("youlose");
         }
     }
     function reset() {
+        started = false;
+        lost = false;
         $(".boundary").removeClass("youlose");
-        started = null;
-        $("#status").text("Click the \"S\" to begin");
+        $("#status").text("Click the \"S\" to begin.");
     }
 });
