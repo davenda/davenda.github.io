@@ -5,8 +5,7 @@ $(document).ready(function () {
     $("#end").on("mouseover", function () {
         if (started && !lost) {
             $("#status").text("You Win! :]");
-        }
-        else if(started){
+        } else if (started) {
             $("#status").text("Sorry, You Lost. :[");
         }
         started = false;
@@ -17,7 +16,12 @@ $(document).ready(function () {
             started = true;
         }
     });
-    $("#maze").on("mouseleave", failed);
+    $("#maze").on("mouseleave", function () {
+        if (started) {
+            $(".boundary").not(".example").addClass("youlose");
+            $("#status").text("You Lose!");
+        }
+    });
     function failed() {
         if (started) {
             lost = true;
