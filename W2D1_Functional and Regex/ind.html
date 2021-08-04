@@ -378,21 +378,55 @@
         //     this.university = 'MUM';
         //     this.year = '2016';
         // }
-        var a = 12;
-        var b = 8;
-        var z = x(b);
-        z(a, b);
-        function x(a){
-            console.log(`1: ${this} ${a} ${b}`);
-            var b = function(b){
-                if(a <= 10){
-                    a = a*2;
-                }
-                console.log(`2: ${this} ${a} ${b}`);
+        // var a = 12;
+        // var b = 8;
+        // var z = x(b);
+        // z(a, b);
+        // function x(a){
+        //     console.log(`1: ${this} ${a} ${b}`);
+        //     var b = function(b){
+        //         if(a <= 10){
+        //             a = a*2;
+        //         }
+        //         console.log(`2: ${this} ${a} ${b}`);
+        //     }
+        //     console.log(`3: ${this} ${a} ${b}`);
+        //     return b.bind({a: 5, b: 20});
+        // }
+
+        class Computer{
+            constructor(ram, cpu, storage){
+                this._ram = ram;
+                this._cpu = cpu;
+                this._storage = storage;
             }
-            console.log(`3: ${this} ${a} ${b}`);
-            return b.bind({a: 5, b: 20});
+            getCpu(){
+                return this._cpu;
+            }
+            getRam(){
+                return this._ram;
+            }
+            getStorage(){
+                return this._storage;
+            }
+            runProgram(program){
+                console.log("Running " + program);
+            }
         }
+
+
+        class Laptop extends Computer{
+            constructor(ram, cpu, storage, battery){
+                super(ram, cpu, storage);
+                this._battery = battery;
+            }
+            carryAround(){
+                console.log("carrying laptop:  cpu " + this._cpu +" ram: " + this._ram + " storage: " + this._storage + " battery: " + this._battery);
+            }
+        }
+        let laptop = new Laptop(3, 4, 5, 6);
+        laptop.carryAround();
+        laptop.runProgram("VS Code");
     </script>
     <style>
         body{
@@ -451,10 +485,10 @@
         document.getElementById("ok").onclick = okayClick;
          -->
     <!-- </script> -->
-    <!-- <div id="h">Hello</div>
+    <div id="h">Hello</div>
     <button onclick="swapText();">Click me!</button>
     <span id="output2">Hello</span>
-    <input id="textbox2" type="text" value="Goodbye" /> -->
+    <input id="textbox2" type="text" value="Goodbye" />
 
 </body>
 

@@ -54,7 +54,7 @@ describe("CheckingAccount",function(){
 });
 describe("BankAccount",function(){
     it("must return empty array if nothing is added",function(){
-        let bank=new Bank();
+        let bank = new Bank();
         assert.equal(0,bank.total());
     });
     it("must add and close account",function(){
