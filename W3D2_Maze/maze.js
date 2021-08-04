@@ -1,31 +1,31 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var started;
     $(".boundary").on("mouseover", failed);
-    $("#end").on("mouseover", function(evt){
-        if(started){
+    $("#end").on("mouseover", function () {
+        if (started) {
             $("#status").text("You Win! :]");
         }
     });
-    $("#end").on("mouseleave", function(evt){
-        if(started){
+    $("#end").on("mouseleave", function () {
+        if (started) {
             reset();
         }
     });
-    $("#start").on("click", function(evt){
-        if(!started){
+    $("#start").on("click", function () {
+        if (!started) {
             started = true;
-        }else{
+        } else {
             reset();
         }
     });
     $("#maze").on("mouseleave", failed);
-    function failed(evt){
-        if(started){
+    function failed() {
+        if (started) {
             $("#status").text("Sorry, You Lost. :[");
             $(".boundary").not(".example").addClass("youlose");
         }
-    } 
-    function reset(){
+    }
+    function reset() {
         $(".boundary").removeClass("youlose");
         started = null;
         $("#status").text("Click the \"S\" to begin");
