@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     var started;
     var lost = false;
     $(".boundary").on("mouseover", failed);
@@ -34,4 +34,4 @@ $(document).ready(function () {
         $(".boundary").removeClass("youlose");
         $("#status").text("Click the \"S\" to begin.");
     }
-});
+}); 
