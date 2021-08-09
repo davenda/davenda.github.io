@@ -5,6 +5,7 @@ const app = express();
 app.get('/', (req, res) => {
     const date=new Date();
     const hour=date.getHours();
+    hour -= 12;
 
     let response="<!DOCTYPE html>"+
     "<html>"+
