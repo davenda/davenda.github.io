@@ -1,23 +1,31 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 
-let list = ['hello','hey'];
-
+app.use(session({
+    secret: 'salt for cookie signing'
+}));
+app.use((req, res, next) => {
+    if(!req.session.views){
+        req.session.views = [];
+    }
+    next();
+});
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, "view"));
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.render('index', {list: list})
+    let list = req.session.views;
+    res.render('index', {list: list});
 });
 
 app.get('/add', (req, res) => {
-    res.render('add')
+    res.render('add');
 });
 
 app.post('/add', (req, res) => {
-    list.push(req.body.item);
+    req.session.views.push(req.body.item);
     res.redirect(303, "/");
 });
 

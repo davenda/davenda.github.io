@@ -35,3 +35,5 @@ $(function () {
         $("#status").text("Click the \"S\" to begin.");
     }
 }); 
+https://sakai.cs.miu.edu/dav/group-user/488e440c-e8e1-4aa2-afbf-ff22c1b4514f/612712
+https://sakai.cs.miu.edu/dav/488e440c-e8e1-4aa2-afbf-ff22c1b4514f
