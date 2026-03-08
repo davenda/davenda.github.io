@@ -1,8 +1,7 @@
 # Prevent Jekyll from parsing dependencies
 exclude:
-  - node_modules
+  - "**/node_modules"
   - vendor
-  - MyExpressApp/node_modules
   - .bundle
   - .sass-cache
   - Gemfile
