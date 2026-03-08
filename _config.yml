@@ -2,6 +2,7 @@
 exclude:
   - node_modules
   - vendor
+  - MyExpressApp/node_modules
   - .bundle
   - .sass-cache
   - Gemfile
