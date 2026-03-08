@@ -1,0 +1,8 @@
+# Prevent Jekyll from parsing dependencies
+exclude:
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - Gemfile
+  - Gemfile.lock
