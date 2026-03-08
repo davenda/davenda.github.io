@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dave | Professional Portfolio — IWU Graduate Program</title>
+  <title>Dawit Diriba | Senior Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -11,7 +11,7 @@
       --ink: #111827; --ink-mid: #1f2937; --ink-soft: #374151;
       --slate: #6b7280; --mist: #f3f4f6; --white: #ffffff;
       --accent: #1d4ed8; --accent-lt: #3b82f6;
-      --gold: #b45309; --gold-lt: #d97706;
+      --gold: #b45309;
       --border: #e5e7eb; --border-dk: #d1d5db;
       --ease: cubic-bezier(0.4,0,0.2,1);
     }
@@ -21,147 +21,197 @@
     ::-webkit-scrollbar-track { background: var(--mist); }
     ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 5vw; }
-    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 5vw;
+    }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 700; color: var(--ink); text-decoration: none; }
     .nav-brand em { color: var(--accent); font-style: normal; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--slate); text-decoration: none; transition: color 0.2s; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--slate); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
     .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .nav-burger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
 
-    /* HERO */
-    #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 7rem 5vw 5rem; gap: 4rem; position: relative; overflow: hidden; }
-    .hero-bg-lines { position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(90deg, rgba(29,78,216,0.04) 0px, rgba(29,78,216,0.04) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, rgba(29,78,216,0.04) 0px, rgba(29,78,216,0.04) 1px, transparent 1px, transparent 80px); }
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center; padding: 7rem 5vw 5rem; gap: 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(29,78,216,0.03) 0, rgba(29,78,216,0.03) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(0deg,  rgba(29,78,216,0.03) 0, rgba(29,78,216,0.03) 1px, transparent 1px, transparent 80px);
+    }
+    .hero-blob {
+      position: absolute; right: -10vw; top: 10%; width: 50vw; height: 60vh;
+      background: radial-gradient(ellipse at center, rgba(29,78,216,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
     .hero-text { position: relative; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 0.6rem; background: #eff6ff; color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; border: 1px solid #bfdbfe; margin-bottom: 1.5rem; opacity: 0; animation: up 0.6s 0.1s var(--ease) forwards; }
-    .hero-tag::before { content: '●'; font-size: 0.5rem; }
-    h1.hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 6vw, 5rem); font-weight: 700; line-height: 1.05; color: var(--ink); margin-bottom: 0.5rem; opacity: 0; animation: up 0.6s 0.2s var(--ease) forwards; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #eff6ff; color: var(--accent); font-size: 0.73rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.38rem 1rem; border-radius: 100px; border: 1px solid #bfdbfe;
+      margin-bottom: 1.4rem;
+      opacity: 0; animation: up 0.6s 0.1s var(--ease) forwards;
+    }
+    .hero-tag::before { content: '●'; font-size: 0.45rem; }
+    h1.hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.07;
+      color: var(--ink); margin-bottom: 0.5rem;
+      opacity: 0; animation: up 0.6s 0.2s var(--ease) forwards;
+    }
     h1.hero-name strong { color: var(--accent); }
-    .hero-role { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--gold); font-weight: 500; margin-bottom: 1.5rem; opacity: 0; animation: up 0.6s 0.32s var(--ease) forwards; }
-    .hero-bio { font-size: 1rem; color: var(--slate); line-height: 1.85; max-width: 500px; margin-bottom: 2rem; opacity: 0; animation: up 0.6s 0.44s var(--ease) forwards; }
+    .hero-role { font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: var(--gold); font-weight: 500; margin-bottom: 1.4rem; opacity: 0; animation: up 0.6s 0.32s var(--ease) forwards; }
+    .hero-bio { font-size: 0.97rem; color: var(--slate); line-height: 1.85; max-width: 500px; margin-bottom: 1.8rem; opacity: 0; animation: up 0.6s 0.44s var(--ease) forwards; }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
+      opacity: 0; animation: up 0.6s 0.5s var(--ease) forwards;
+    }
+    .hero-meta-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--slate); }
+    .hero-meta-item span { font-weight: 500; color: var(--ink-soft); }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: up 0.6s 0.56s var(--ease) forwards; }
-    .btn { padding: 0.75rem 1.75rem; border-radius: 6px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; transition: all 0.2s var(--ease); cursor: pointer; border: none; }
+    .btn { padding: 0.75rem 1.75rem; border-radius: 6px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; transition: all 0.2s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; }
     .btn-blue { background: var(--accent); color: #fff; }
     .btn-blue:hover { background: #1e40af; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29,78,216,0.25); }
     .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border-dk); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    .hero-card { position: relative; background: var(--mist); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--border); opacity: 0; animation: up 0.7s 0.3s var(--ease) forwards; }
-    .hero-card::before { content: ''; position: absolute; top: -2px; left: 2rem; right: 2rem; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-lt)); border-radius: 3px; }
-    .card-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--ink-soft); line-height: 1.7; margin-bottom: 1.5rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
-    .card-props { display: flex; flex-direction: column; gap: 0.85rem; }
-    .prop-row { display: flex; gap: 0.75rem; align-items: flex-start; }
-    .prop-key { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); white-space: nowrap; min-width: 90px; padding-top: 0.1rem; }
-    .prop-val { font-size: 0.9rem; color: var(--ink-soft); }
 
-    /* SHARED SECTION */
+    /* hero summary card */
+    .hero-card {
+      position: relative; background: var(--mist); border-radius: 16px;
+      padding: 2.2rem; border: 1px solid var(--border);
+      opacity: 0; animation: up 0.7s 0.3s var(--ease) forwards;
+    }
+    .hero-card::before { content: ''; position: absolute; top: -2px; left: 2rem; right: 2rem; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-lt)); border-radius: 3px; }
+    .card-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink-soft); line-height: 1.75; margin-bottom: 1.5rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
+    .card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .c-stat { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; }
+    .c-stat-n { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.2rem; }
+    .c-stat-l { font-size: 0.73rem; color: var(--slate); letter-spacing: 0.04em; }
+
+    /* ── SHARED ── */
     section { padding: 5.5rem 5vw; }
-    .section-wrap { max-width: 1080px; margin: 0 auto; }
-    .sec-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .section-wrap { max-width: 1100px; margin: 0 auto; }
+    .sec-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
     .sec-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1.5px; background: var(--accent); }
-    h2.sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.15; }
-    .sec-sub { font-size: 0.95rem; color: var(--slate); max-width: 560px; }
+    h2.sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.85rem, 3.2vw, 2.5rem); font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.15; }
+    .sec-sub { font-size: 0.93rem; color: var(--slate); max-width: 540px; margin-bottom: 2.5rem; }
     .sec-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-    /* ABOUT */
+    /* ── ABOUT ── */
     #about { background: var(--white); }
-    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
-    .about-body p { color: var(--ink-soft); line-height: 1.9; margin-bottom: 1.1rem; font-size: 0.97rem; }
-    .value-prop { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 1.5rem; margin-top: 1.5rem; }
-    .value-prop-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
-    .value-prop p { color: var(--ink-soft); font-size: 0.93rem; line-height: 1.75; margin: 0; }
-    .about-sidebar { display: flex; flex-direction: column; gap: 1rem; }
-    .info-card { background: var(--mist); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
-    .info-card-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.4rem; }
-    .info-card-value { font-size: 0.95rem; color: var(--ink); font-weight: 500; }
+    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
+    .about-body p { color: var(--ink-soft); line-height: 1.9; margin-bottom: 1rem; font-size: 0.96rem; }
+    .value-prop { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 1.4rem; margin-top: 1.5rem; }
+    .value-prop-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .value-prop p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.75; margin: 0; }
+    .about-sidebar { display: flex; flex-direction: column; gap: 0.85rem; }
+    .info-card { background: var(--mist); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; }
+    .info-card-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.3rem; }
+    .info-card-value { font-size: 0.92rem; color: var(--ink); font-weight: 500; }
 
-    /* SKILLS */
+    /* ── SKILLS ── */
     #skills { background: var(--mist); }
-    .skills-header { margin-bottom: 2.5rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
-    .skill-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: all 0.25s var(--ease); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.25rem; }
+    .skill-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem; transition: all 0.25s var(--ease); }
     .skill-card:hover { border-color: var(--accent-lt); box-shadow: 0 8px 24px rgba(29,78,216,0.08); transform: translateY(-3px); }
-    .skill-card-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-    .skill-icon { width: 38px; height: 38px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-    .skill-cat { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .stag { padding: 0.28rem 0.7rem; background: var(--mist); border: 1px solid var(--border); border-radius: 100px; font-size: 0.78rem; color: var(--ink-soft); transition: all 0.2s; }
+    .skill-card-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem; }
+    .skill-icon { width: 36px; height: 36px; border-radius: 8px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .skill-cat { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+    .stag { padding: 0.25rem 0.65rem; background: var(--mist); border: 1px solid var(--border); border-radius: 100px; font-size: 0.76rem; color: var(--ink-soft); transition: all 0.2s; }
     .stag:hover { background: #eff6ff; border-color: #93c5fd; color: var(--accent); }
 
-    /* EXPERIENCE */
+    /* ── EXPERIENCE ── */
     #experience { background: var(--white); }
-    .exp-grid { display: grid; gap: 0; margin-top: 2.5rem; }
-    .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+    .exp-grid { display: grid; gap: 0; margin-top: 2rem; }
+    .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
     .exp-item:first-child { border-top: 1px solid var(--border); }
-    .exp-date { font-size: 0.8rem; color: var(--slate); font-weight: 500; margin-bottom: 0.3rem; }
-    .exp-company { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-    .exp-role { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: 0.75rem; }
-    .exp-desc { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-    .exp-desc li { font-size: 0.9rem; color: var(--slate); padding-left: 1.1rem; position: relative; line-height: 1.65; }
-    .exp-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; top: 0.05rem; }
+    .exp-date { font-size: 0.78rem; color: var(--slate); font-weight: 500; margin-bottom: 0.3rem; }
+    .exp-company { font-size: 0.83rem; color: var(--accent); font-weight: 600; line-height: 1.4; }
+    .exp-role { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.7rem; }
+    .exp-desc { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .exp-desc li { font-size: 0.88rem; color: var(--slate); padding-left: 1.1rem; position: relative; line-height: 1.65; }
+    .exp-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.78rem; top: 0.08rem; }
 
-    /* ARTIFACTS */
-    #projects { background: var(--mist); }
-    .projects-intro { margin-bottom: 2.5rem; }
-    .artifact-note { display: inline-flex; align-items: center; gap: 0.5rem; background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; border-radius: 6px; padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 500; margin-top: 0.75rem; }
+    /* ── EDUCATION ── */
+    #education { background: var(--mist); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: all 0.25s var(--ease); }
+    .edu-card:hover { border-color: var(--accent-lt); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(29,78,216,0.08); }
+    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; line-height: 1.3; }
+    .edu-school { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+    .edu-date { font-size: 0.78rem; color: var(--slate); }
+
+    /* ── ARTIFACTS ── */
+    #projects { background: var(--white); }
+    .artifact-note { display: inline-flex; align-items: center; gap: 0.5rem; background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; border-radius: 6px; padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 500; margin-bottom: 2rem; }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.5rem; }
     .artifact-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.25s var(--ease); display: flex; flex-direction: column; }
     .artifact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: var(--accent-lt); }
-    .artifact-card-top { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); padding: 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; }
-    .artifact-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: rgba(255,255,255,0.25); line-height: 1; }
-    .artifact-icon { font-size: 1.8rem; }
-    .artifact-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
-    .artifact-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
-    .artifact-field { display: flex; flex-direction: column; gap: 0.2rem; }
-    .af-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-    .af-value { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.6; }
-    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.25rem; }
-    .atool { padding: 0.22rem 0.65rem; border-radius: 100px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.74rem; color: var(--accent); font-weight: 500; }
-    .artifact-value-prop { background: var(--mist); border-radius: 8px; padding: 0.85rem 1rem; margin-top: auto; }
-    .avp-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-    .avp-text { font-size: 0.83rem; color: var(--ink-soft); line-height: 1.55; }
+    .artifact-card-top { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); padding: 1.4rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; }
+    .artifact-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.2); line-height: 1; }
+    .artifact-icon { font-size: 1.7rem; }
+    .artifact-body { padding: 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
+    .artifact-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
+    .af-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.18rem; }
+    .af-value { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
+    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.2rem; }
+    .atool { padding: 0.2rem 0.6rem; border-radius: 100px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.72rem; color: var(--accent); font-weight: 500; }
+    .artifact-value-prop { background: var(--mist); border-radius: 8px; padding: 0.8rem 1rem; margin-top: auto; }
+    .avp-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
+    .avp-text { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55; }
 
-    /* CONTACT */
-    #contact { background: var(--white); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
-    .contact-body p { color: var(--slate); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1rem; }
-    .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
-    .clink { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--mist); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: all 0.2s var(--ease); }
+    /* ── CONTACT ── */
+    #contact { background: var(--mist); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; align-items: start; }
+    .contact-body p { color: var(--slate); font-size: 0.93rem; line-height: 1.85; margin-bottom: 1rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+    .clink { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; background: var(--white); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: all 0.2s var(--ease); }
     .clink:hover { border-color: var(--accent); background: #eff6ff; transform: translateX(4px); }
-    .clink-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; border: 1px solid var(--border); }
-    .clink-label { font-size: 0.7rem; color: var(--slate); letter-spacing: 0.06em; text-transform: uppercase; }
-    .clink-value { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
-    .contact-card { background: var(--ink); border-radius: 14px; padding: 2.5rem; color: var(--white); }
-    .contact-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .contact-card p { color: #9ca3af; font-size: 0.9rem; line-height: 1.75; margin-bottom: 1.75rem; }
-    .iwu-badge { display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.9rem 1.1rem; }
-    .iwu-icon { font-size: 1.4rem; }
-    .iwu-name { font-size: 0.85rem; font-weight: 600; color: var(--white); }
-    .iwu-prog { font-size: 0.78rem; color: #9ca3af; }
+    .clink-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--mist); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; border: 1px solid var(--border); }
+    .clink-label { font-size: 0.68rem; color: var(--slate); letter-spacing: 0.06em; text-transform: uppercase; }
+    .clink-value { font-size: 0.88rem; color: var(--ink); font-weight: 500; }
+    .contact-card { background: var(--ink); border-radius: 14px; padding: 2.25rem; color: var(--white); }
+    .contact-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .contact-card p { color: #9ca3af; font-size: 0.88rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .iwu-badge { display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.9rem 1.1rem; margin-bottom: 1rem; }
+    .iwu-icon { font-size: 1.3rem; }
+    .iwu-name { font-size: 0.83rem; font-weight: 600; color: var(--white); }
+    .iwu-prog { font-size: 0.75rem; color: #9ca3af; }
 
-    /* FOOTER */
-    footer { padding: 1.75rem 5vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-size: 0.8rem; color: var(--slate); }
+    /* ── FOOTER ── */
+    footer { padding: 1.6rem 5vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; background: var(--white); }
+    .footer-copy { font-size: 0.78rem; color: var(--slate); }
     .footer-copy strong { color: var(--accent); }
     .footer-nav { display: flex; gap: 1.5rem; }
-    .footer-nav a { font-size: 0.78rem; color: var(--slate); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a { font-size: 0.76rem; color: var(--slate); text-decoration: none; transition: color 0.2s; }
     .footer-nav a:hover { color: var(--accent); }
 
-    /* ANIMATIONS */
+    /* ── ANIMATIONS ── */
     @keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
     .reveal.on { opacity: 1; transform: none; }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       #hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6rem; }
       .hero-card { display: none; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
     }
     @media (max-width: 640px) {
-      .nav-links { display: none; flex-direction: column; gap: 1.25rem; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 2rem 5vw; border-bottom: 1px solid var(--border); }
+      .nav-links { display: none; flex-direction: column; gap: 1.25rem; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 1.75rem 5vw; border-bottom: 1px solid var(--border); }
       .nav-links.open { display: flex; }
       .nav-burger { display: flex; }
     }
@@ -171,11 +221,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-brand">Dave<em>.</em></a>
+  <a href="#hero" class="nav-brand">Dawit<em>.</em></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#projects">Portfolio</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -186,33 +237,38 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-lines"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-blob"></div>
   <div class="hero-text">
     <div class="hero-tag">IWU Graduate Portfolio · MS Program</div>
-    <h1 class="hero-name">Hi, I'm<br><strong>Dave</strong></h1>
+    <h1 class="hero-name">Hi, I'm<br><strong>Dawit Diriba</strong></h1>
     <p class="hero-role">Senior Software Engineer &amp; Graduate Scholar</p>
     <p class="hero-bio">
-      I build scalable distributed systems at Fidelity Investments while pursuing 
-      graduate studies at Indiana Wesleyan University. This portfolio documents 
-      my professional growth, coursework artifacts, and technical accomplishments.
+      Full Stack Developer with 6+ years of expertise designing, building, and maintaining 
+      enterprise-grade web applications and cloud-native systems. Currently at MUFG Bank 
+      (via Amdocs) and pursuing graduate studies at Indiana Wesleyan University.
     </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">📍 <span>Dallas, Texas</span></div>
+      <div class="hero-meta-item">📧 <span>dawitcareer@gmail.com</span></div>
+      <div class="hero-meta-item">📞 <span>469-739-5570</span></div>
+    </div>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-blue">View Artifacts</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <a href="https://www.linkedin.com/in/davend/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
   <div class="hero-card">
-    <p class="card-intro">
-      "Every artifact in this portfolio represents a real step in my journey — 
-      from engineering enterprise systems to exploring AI, machine learning, 
-      and the intersection of technology and ethics."
+    <p class="card-quote">
+      "Experienced across the full software development lifecycle — from initial concept 
+      to final deployment — I combine enterprise engineering with graduate-level 
+      AI and ML research to solve real-world challenges."
     </p>
-    <div class="card-props">
-      <div class="prop-row"><span class="prop-key">Program</span><span class="prop-val">Graduate Studies · Indiana Wesleyan University</span></div>
-      <div class="prop-row"><span class="prop-key">Employer</span><span class="prop-val">Fidelity Investments · Westlake, TX</span></div>
-      <div class="prop-row"><span class="prop-key">Role</span><span class="prop-val">Senior Full Stack Engineer</span></div>
-      <div class="prop-row"><span class="prop-key">Focus</span><span class="prop-val">AI/ML · Cloud Systems · Software Architecture</span></div>
-      <div class="prop-row"><span class="prop-key">Location</span><span class="prop-val">Dallas / Addison, TX</span></div>
+    <div class="card-stats">
+      <div class="c-stat"><div class="c-stat-n">6+</div><div class="c-stat-l">Years of Experience</div></div>
+      <div class="c-stat"><div class="c-stat-n">AWS</div><div class="c-stat-l">Cloud Platform</div></div>
+      <div class="c-stat"><div class="c-stat-n">Java</div><div class="c-stat-l">Primary Language</div></div>
+      <div class="c-stat"><div class="c-stat-n">MS</div><div class="c-stat-l">Graduate Degree (IWU)</div></div>
     </div>
   </div>
 </section>
@@ -226,21 +282,43 @@
     <h2 class="sec-title reveal">Professional Bio &amp; Value Proposition</h2>
     <div class="about-grid">
       <div class="about-body reveal">
-        <p>I am a Senior Full Stack Engineer with hands-on expertise in building enterprise-grade distributed systems, cloud-native APIs, and DevOps pipelines. Currently at Fidelity Investments, I design and maintain high-throughput financial services infrastructure on AWS using Java, Spring Boot, and event-driven architectures with Apache Kafka.</p>
-        <p>Simultaneously, I am advancing my education at Indiana Wesleyan University in a graduate program centered on AI, machine learning, and data systems. This combination of practitioner experience and academic inquiry positions me at a rare intersection — I don't just study emerging technologies, I deploy them in production at scale every day.</p>
-        <p>My background spans algorithmic thinking, full-stack development, cloud infrastructure, and system resilience. I approach every challenge with a commitment to clean architecture, rigorous testing, and thoughtful design — whether in code or in ideas.</p>
+        <p>
+          I am a Senior Software Engineer with over 6 years of expertise designing, building, 
+          and maintaining both web and mobile applications across multiple industries. I am 
+          proficiently adept at all phases of the software development lifecycle — from initial 
+          concept to final deployment — and skilled at optimizing application functionality and performance.
+        </p>
+        <p>
+          My technical stack includes mastery of Spring Boot, Hibernate, Angular, NodeJS, and 
+          advanced cloud technologies including AWS EC2, Lambda, RDS, S3, and EKS. At MUFG Bank, 
+          I design and deploy cloud-native financial solutions, transforming legacy SOAP-based 
+          services into modern RESTful microservices and championing security best practices 
+          using Veracode and Nexus IQ.
+        </p>
+        <p>
+          I hold a Master of Computer Science from Maharishi International University and a 
+          Bachelor's in Electrical and Computer Engineering from Adama Science and Technology 
+          University. Currently enrolled at Indiana Wesleyan University, I continue advancing 
+          at the cutting edge of AI, machine learning, and data systems.
+        </p>
         <div class="value-prop">
           <div class="value-prop-label">Personal Value Proposition</div>
-          <p>I bring a rare combination of production-grade engineering experience and graduate-level AI/ML knowledge to every challenge. Where many engineers theorize, I build. Where many students study, I apply. My unique value lies in bridging the gap between cutting-edge research and real-world, scalable software systems — making me an asset to any team working at the frontier of technology.</p>
+          <p>
+            I bring a powerful combination of enterprise software engineering experience and 
+            graduate-level AI/ML scholarship to every challenge. My unique value lies in 
+            bridging cloud-native infrastructure, distributed systems design, and emerging 
+            AI research — enabling teams to build systems that are not only scalable and 
+            secure today, but positioned for the intelligent systems of tomorrow.
+          </p>
         </div>
       </div>
       <div class="about-sidebar reveal">
-        <div class="info-card"><div class="info-card-label">Current Role</div><div class="info-card-value">Senior Full Stack Engineer</div></div>
-        <div class="info-card"><div class="info-card-label">Company</div><div class="info-card-value">Fidelity Investments</div></div>
+        <div class="info-card"><div class="info-card-label">Current Role</div><div class="info-card-value">Senior Software Engineer</div></div>
+        <div class="info-card"><div class="info-card-label">Employer</div><div class="info-card-value">MUFG Bank via Amdocs Inc.</div></div>
         <div class="info-card"><div class="info-card-label">University</div><div class="info-card-value">Indiana Wesleyan University</div></div>
-        <div class="info-card"><div class="info-card-label">Program</div><div class="info-card-value">Graduate MS Program (CPT)</div></div>
-        <div class="info-card"><div class="info-card-label">Location</div><div class="info-card-value">Addison / Westlake, TX</div></div>
-        <div class="info-card"><div class="info-card-label">Focus Areas</div><div class="info-card-value">AI · Cloud · Distributed Systems · FinTech</div></div>
+        <div class="info-card"><div class="info-card-label">Prior MS Degree</div><div class="info-card-value">Computer Science · MIU</div></div>
+        <div class="info-card"><div class="info-card-label">Location</div><div class="info-card-value">Dallas, Texas 75230</div></div>
+        <div class="info-card"><div class="info-card-label">Focus Areas</div><div class="info-card-value">Cloud · Microservices · AI/ML · FinTech</div></div>
       </div>
     </div>
   </div>
@@ -251,35 +329,41 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-wrap">
-    <div class="skills-header">
-      <div class="sec-eyebrow reveal">Skills</div>
-      <h2 class="sec-title reveal">Technologies &amp; Competencies</h2>
-      <p class="sec-sub reveal">A cross-disciplinary toolkit spanning backend engineering, cloud infrastructure, AI/ML, and software design.</p>
-    </div>
+    <div class="sec-eyebrow reveal">Skills</div>
+    <h2 class="sec-title reveal">Technologies &amp; Competencies</h2>
+    <p class="sec-sub reveal">A comprehensive toolkit spanning backend engineering, cloud infrastructure, frontend development, databases, and DevOps.</p>
     <div class="skills-grid">
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">⚙️</div><div class="skill-cat">Backend Engineering</div></div>
-        <div class="skill-tags"><span class="stag">Java</span><span class="stag">Spring Boot</span><span class="stag">RESTful APIs</span><span class="stag">Microservices</span><span class="stag">JAX-RS</span><span class="stag">JUnit</span></div>
+        <div class="skill-card-head"><div class="skill-icon">⚙️</div><div class="skill-cat">Languages</div></div>
+        <div class="skill-tags"><span class="stag">Java</span><span class="stag">JavaScript</span><span class="stag">TypeScript</span><span class="stag">PHP</span><span class="stag">Dart</span></div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">☁️</div><div class="skill-cat">Cloud &amp; DevOps</div></div>
-        <div class="skill-tags"><span class="stag">AWS</span><span class="stag">DynamoDB</span><span class="stag">S3</span><span class="stag">CI/CD</span><span class="stag">Docker</span><span class="stag">Jenkins</span><span class="stag">GitHub Actions</span></div>
+        <div class="skill-card-head"><div class="skill-icon">🏗️</div><div class="skill-cat">Frameworks</div></div>
+        <div class="skill-tags"><span class="stag">Spring</span><span class="stag">Spring Boot</span><span class="stag">Hibernate</span><span class="stag">Angular</span><span class="stag">ExpressJS</span><span class="stag">NodeJS</span></div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">📡</div><div class="skill-cat">Distributed Systems</div></div>
-        <div class="skill-tags"><span class="stag">Apache Kafka</span><span class="stag">Event-Driven</span><span class="stag">Resilience4j</span><span class="stag">Circuit Breakers</span><span class="stag">WireMock</span></div>
+        <div class="skill-card-head"><div class="skill-icon">☁️</div><div class="skill-cat">AWS Cloud</div></div>
+        <div class="skill-tags"><span class="stag">EC2</span><span class="stag">Lambda</span><span class="stag">S3</span><span class="stag">RDS</span><span class="stag">EKS</span><span class="stag">API Gateway</span></div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">🤖</div><div class="skill-cat">AI &amp; Machine Learning</div></div>
-        <div class="skill-tags"><span class="stag">Data Theory</span><span class="stag">ML Concepts</span><span class="stag">Python</span><span class="stag">Algorithm Design</span><span class="stag">AI Ethics</span></div>
+        <div class="skill-card-head"><div class="skill-icon">🗄️</div><div class="skill-cat">Databases</div></div>
+        <div class="skill-tags"><span class="stag">MySQL</span><span class="stag">MongoDB</span><span class="stag">HBase</span><span class="stag">MS SQL</span><span class="stag">NoSQL</span></div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">🖥️</div><div class="skill-cat">Frontend</div></div>
-        <div class="skill-tags"><span class="stag">React</span><span class="stag">JavaScript</span><span class="stag">HTML/CSS</span><span class="stag">JavaFX</span><span class="stag">TypeScript</span></div>
+        <div class="skill-card-head"><div class="skill-icon">🛠️</div><div class="skill-cat">DevOps &amp; Tools</div></div>
+        <div class="skill-tags"><span class="stag">Docker</span><span class="stag">Kubernetes</span><span class="stag">Jenkins</span><span class="stag">GitHub</span><span class="stag">BitBucket</span><span class="stag">Postman</span><span class="stag">Splunk</span></div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-card-head"><div class="skill-icon">🔐</div><div class="skill-cat">Security &amp; Auth</div></div>
-        <div class="skill-tags"><span class="stag">JWT Auth</span><span class="stag">OAuth</span><span class="stag">API Security</span><span class="stag">Zero-Trust</span></div>
+        <div class="skill-card-head"><div class="skill-icon">🔐</div><div class="skill-cat">Security</div></div>
+        <div class="skill-tags"><span class="stag">Veracode</span><span class="stag">Nexus IQ</span><span class="stag">REST</span><span class="stag">SOAP</span><span class="stag">Microservices</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-head"><div class="skill-icon">🖥️</div><div class="skill-cat">Frontend &amp; Web</div></div>
+        <div class="skill-tags"><span class="stag">HTML5</span><span class="stag">CSS3</span><span class="stag">JSP</span><span class="stag">jQuery</span><span class="stag">AJAX</span><span class="stag">Bootstrap</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-head"><div class="skill-icon">📐</div><div class="skill-cat">Design Patterns</div></div>
+        <div class="skill-tags"><span class="stag">Singleton</span><span class="stag">MVC</span><span class="stag">DAO</span><span class="stag">Factory</span><span class="stag">Facade</span><span class="stag">Proxy</span></div>
       </div>
     </div>
   </div>
@@ -291,51 +375,73 @@
 <section id="experience">
   <div class="section-wrap">
     <div class="sec-eyebrow reveal">Experience</div>
-    <h2 class="sec-title reveal">Professional History</h2>
+    <h2 class="sec-title reveal">Employment History</h2>
     <div class="exp-grid">
+
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">2023 – Present</div>
-          <div class="exp-company">Fidelity Investments</div>
+          <div class="exp-date">March 2022 – Present</div>
+          <div class="exp-company">MUFG Bank (via Amdocs Inc.) · Plano, TX</div>
         </div>
         <div class="exp-body">
-          <div class="exp-role">Senior Full Stack Engineer</div>
+          <div class="exp-role">Senior Software Engineer</div>
           <ul class="exp-desc">
-            <li>Design and maintain distributed microservices for high-volume financial transaction processing on AWS.</li>
-            <li>Build fault-tolerant RESTful APIs with Spring Boot; implement circuit breakers using Resilience4j.</li>
-            <li>Lead CI/CD pipeline automation and DevOps best practices across multiple engineering teams.</li>
-            <li>Architect event-driven data pipelines using Apache Kafka for real-time financial data streaming.</li>
-            <li>Mentor junior engineers and drive architecture reviews and code quality standards.</li>
+            <li>Designed and deployed cloud-native solutions for secure financial transactions using AWS EC2, S3, Lambda, and RDS, ensuring scalability and security.</li>
+            <li>Developed serverless workflows leveraging AWS Lambda and API Gateway to process real-time payment data, achieving high availability and low latency.</li>
+            <li>Participated in migration of legacy Java applications from Struts Framework to Spring Boot, enhancing modularity, scalability, and maintainability.</li>
+            <li>Transformed monolithic SOAP-based services into modern RESTful APIs using Spring Boot and Microservices architecture to improve performance and integration.</li>
+            <li>Identified vulnerabilities using Veracode and Nexus IQ, reducing security risks by 30% through proactive threat mitigation strategies.</li>
+            <li>Leveraged Hibernate (JPA) to optimize data modeling for MySQL databases, improving transaction processing efficiency.</li>
+            <li>Championed best practices implementing design patterns like Singleton, Factory, and MVC to create robust, maintainable applications.</li>
           </ul>
         </div>
       </div>
+
       <div class="exp-item reveal">
         <div class="exp-meta">
-          <div class="exp-date">2021 – 2023</div>
-          <div class="exp-company">Previous Employer</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">Full Stack Software Engineer</div>
-          <ul class="exp-desc">
-            <li>Developed Java backend services integrated with cloud infrastructure on AWS.</li>
-            <li>Implemented JWT authentication and authorization for secure API endpoints.</li>
-            <li>Built React-based frontend components and improved internal developer tooling.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-date">2019 – 2021</div>
-          <div class="exp-company">Early Career</div>
+          <div class="exp-date">July 2018 – April 2021</div>
+          <div class="exp-company">Commercial Bank of Ethiopia · Adama, Ethiopia</div>
         </div>
         <div class="exp-body">
           <div class="exp-role">Software Engineer</div>
           <ul class="exp-desc">
-            <li>Contributed to backend API development and database optimization projects.</li>
-            <li>Participated in agile development cycles, sprint planning, and technical design reviews.</li>
-            <li>Built foundational expertise in Java, REST APIs, and cloud deployment workflows.</li>
+            <li>Engineered backend solutions for banking applications using Java, Spring Boot, and Hibernate, ensuring seamless integration with NoSQL and relational databases.</li>
+            <li>Built and maintained scalable RESTful APIs and Microservices to support high-demand banking operations, promoting modular development.</li>
+            <li>Streamlined team collaboration and code reviews using GitHub and CI/CD tools like Jenkins, ensuring smooth deployments.</li>
+            <li>Implemented Elastic Load Balancing and Auto Scaling in development environments to simulate real-world traffic and test performance.</li>
+            <li>Spearheaded use of design patterns like Facade and Proxy to standardize system interactions and improve code readability.</li>
+            <li>Created dynamic web interfaces with JavaScript, TypeScript, Angular, and Bootstrap, delivering intuitive user experiences.</li>
+            <li>Collaborated with product owners to translate requirements into software designs, achieving a 20% improvement in delivery timelines.</li>
           </ul>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-wrap">
+    <div class="sec-eyebrow reveal">Education</div>
+    <h2 class="sec-title reveal">Academic Background</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-degree">Graduate Program (Current)</div>
+        <div class="edu-school">Indiana Wesleyan University</div>
+        <div class="edu-date">2024 – Present · CPT Authorization</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">Master of Computer Science</div>
+        <div class="edu-school">Maharishi International University · Fairfield, Iowa</div>
+        <div class="edu-date">April 2021 – March 2023</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">Bachelor of Electrical &amp; Computer Engineering</div>
+        <div class="edu-school">Adama Science and Technology University · Ethiopia</div>
+        <div class="edu-date">September 2013 – June 2018</div>
       </div>
     </div>
   </div>
@@ -346,66 +452,80 @@
 <!-- ARTIFACTS -->
 <section id="projects">
   <div class="section-wrap">
-    <div class="projects-intro">
-      <div class="sec-eyebrow reveal">Portfolio Artifacts</div>
-      <h2 class="sec-title reveal">IWU Coursework &amp; Professional Projects</h2>
-      <p class="sec-sub reveal">Each artifact follows the IWU portfolio framework — including title, objective, process, tools, and value proposition.</p>
-      <div class="artifact-note reveal">📌 Reflections for each artifact are submitted separately through Brightspace — not included here per IWU guidelines.</div>
-    </div>
+    <div class="sec-eyebrow reveal">Portfolio Artifacts</div>
+    <h2 class="sec-title reveal">IWU Coursework &amp; Professional Projects</h2>
+    <p class="sec-sub reveal">Each artifact follows the IWU portfolio framework — including objective, process, tools, and value proposition.</p>
+    <div class="artifact-note reveal">📌 Reflections are submitted separately through Brightspace per IWU guidelines — not included here.</div>
+
     <div class="projects-grid">
 
+      <!-- 01 -->
       <div class="artifact-card reveal">
-        <div class="artifact-card-top"><div class="artifact-num">01</div><div class="artifact-icon">🏗️</div></div>
+        <div class="artifact-card-top"><div class="artifact-num">01</div><div class="artifact-icon">☁️</div></div>
         <div class="artifact-body">
-          <div class="artifact-title">Distributed Microservices Architecture — Fidelity</div>
-          <div class="artifact-field"><span class="af-label">Objective</span><span class="af-value">Design a fault-tolerant, high-throughput API layer for financial transaction processing using Spring Boot and AWS.</span></div>
-          <div class="artifact-field"><span class="af-label">Process</span><span class="af-value">Architected service decomposition, implemented Resilience4j circuit breakers, built CI/CD automation, and conducted load testing with WireMock.</span></div>
-          <div class="artifact-field"><span class="af-label">Tools &amp; Technologies</span><div class="artifact-tools"><span class="atool">Java</span><span class="atool">Spring Boot</span><span class="atool">AWS</span><span class="atool">Resilience4j</span><span class="atool">WireMock</span><span class="atool">CI/CD</span></div></div>
-          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Demonstrates ability to build enterprise-grade distributed systems with real-world fault tolerance — directly applicable to cloud-native FinTech engineering roles.</div></div>
+          <div class="artifact-title">Cloud-Native Financial Transaction System — MUFG Bank</div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <div><div class="af-label">Objective</div><div class="af-value">Design secure, scalable cloud-native solutions for financial transaction processing using AWS.</div></div>
+            <div><div class="af-label">Process</div><div class="af-value">Architected serverless workflows with Lambda and API Gateway; deployed EC2, S3, and RDS resources; implemented CI/CD automation and security scanning with Veracode.</div></div>
+            <div><div class="af-label">Tools &amp; Technologies</div><div class="artifact-tools"><span class="atool">Java</span><span class="atool">Spring Boot</span><span class="atool">AWS Lambda</span><span class="atool">EC2</span><span class="atool">RDS</span><span class="atool">Veracode</span></div></div>
+          </div>
+          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Demonstrates enterprise-level cloud architecture skills directly applicable to FinTech roles requiring high-availability, secure distributed systems at scale.</div></div>
         </div>
       </div>
 
+      <!-- 02 -->
       <div class="artifact-card reveal">
-        <div class="artifact-card-top"><div class="artifact-num">02</div><div class="artifact-icon">📊</div></div>
+        <div class="artifact-card-top"><div class="artifact-num">02</div><div class="artifact-icon">🔄</div></div>
         <div class="artifact-body">
-          <div class="artifact-title">Data &amp; Information Theory — IWU Graduate Discussion</div>
-          <div class="artifact-field"><span class="af-label">Objective</span><span class="af-value">Explore theoretical distinctions between data, information, and knowledge and their implications for AI systems.</span></div>
-          <div class="artifact-field"><span class="af-label">Process</span><span class="af-value">Researched foundational information theory, composed a Chicago Manual of Style–formatted graduate discussion post, and engaged with peer responses.</span></div>
-          <div class="artifact-field"><span class="af-label">Tools &amp; Technologies</span><div class="artifact-tools"><span class="atool">Academic Research</span><span class="atool">Chicago Style</span><span class="atool">Brightspace</span></div></div>
-          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Showcases graduate-level critical thinking and the ability to connect information theory with practical AI system design.</div></div>
+          <div class="artifact-title">SOAP-to-REST Microservices Migration</div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <div><div class="af-label">Objective</div><div class="af-value">Modernize legacy monolithic SOAP-based banking services by transforming them into RESTful microservices.</div></div>
+            <div><div class="af-label">Process</div><div class="af-value">Analyzed existing Struts/SOAP codebase, decomposed into microservices, rebuilt APIs with Spring Boot, validated with JUnit, and deployed via Jenkins CI/CD pipeline.</div></div>
+            <div><div class="af-label">Tools &amp; Technologies</div><div class="artifact-tools"><span class="atool">Spring Boot</span><span class="atool">REST</span><span class="atool">Hibernate</span><span class="atool">MySQL</span><span class="atool">Jenkins</span><span class="atool">Docker</span></div></div>
+          </div>
+          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Showcases full system modernization expertise — a critical skill for organizations transitioning from legacy infrastructure to cloud-native architectures.</div></div>
         </div>
       </div>
 
+      <!-- 03 -->
       <div class="artifact-card reveal">
-        <div class="artifact-card-top"><div class="artifact-num">03</div><div class="artifact-icon">🧠</div></div>
+        <div class="artifact-card-top"><div class="artifact-num">03</div><div class="artifact-icon">📊</div></div>
         <div class="artifact-body">
-          <div class="artifact-title">Human Reasoning vs. AI — Scripture-Based Reflection</div>
-          <div class="artifact-field"><span class="af-label">Objective</span><span class="af-value">Analyze the boundary between human cognition and AI reasoning through an ethical and theological lens.</span></div>
-          <div class="artifact-field"><span class="af-label">Process</span><span class="af-value">Synthesized AI ethics literature with scripture-based principles; drafted a structured academic reflection formatted per Chicago Manual of Style guidelines.</span></div>
-          <div class="artifact-field"><span class="af-label">Tools &amp; Technologies</span><div class="artifact-tools"><span class="atool">Theological Research</span><span class="atool">AI Ethics</span><span class="atool">Chicago Style</span></div></div>
-          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Illustrates interdisciplinary thinking that bridges technology and ethics — critical for responsible AI development and leadership.</div></div>
+          <div class="artifact-title">Twitter COVID-19 Analytics Pipeline — MIU</div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <div><div class="af-label">Objective</div><div class="af-value">Build a real-time streaming pipeline to analyze and visualize COVID-19 related tweets using Big Data technologies.</div></div>
+            <div><div class="af-label">Process</div><div class="af-value">Integrated Twitter streaming API, built ingestion layer with Kafka, processed data using Spark Streaming and SQL, stored in HDFS/Hive, and visualized in Tableau.</div></div>
+            <div><div class="af-label">Tools &amp; Technologies</div><div class="artifact-tools"><span class="atool">Java</span><span class="atool">Kafka</span><span class="atool">Hadoop</span><span class="atool">Spark</span><span class="atool">Hive</span><span class="atool">Tableau</span></div></div>
+          </div>
+          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Demonstrates hands-on Big Data and streaming analytics competency — a direct bridge between software engineering and AI/ML data pipeline skills.</div></div>
         </div>
       </div>
 
+      <!-- 04 -->
       <div class="artifact-card reveal">
-        <div class="artifact-card-top"><div class="artifact-num">04</div><div class="artifact-icon">📡</div></div>
+        <div class="artifact-card-top"><div class="artifact-num">04</div><div class="artifact-icon">🛒</div></div>
         <div class="artifact-body">
-          <div class="artifact-title">Event-Driven Architecture with Apache Kafka</div>
-          <div class="artifact-field"><span class="af-label">Objective</span><span class="af-value">Implement real-time data pipelines using Kafka producers/consumers in a Java microservices environment at Fidelity.</span></div>
-          <div class="artifact-field"><span class="af-label">Process</span><span class="af-value">Designed topic partitioning strategy, built producer/consumer services, configured dead-letter queues, and monitored throughput under load.</span></div>
-          <div class="artifact-field"><span class="af-label">Tools &amp; Technologies</span><div class="artifact-tools"><span class="atool">Apache Kafka</span><span class="atool">Java</span><span class="atool">Spring Boot</span><span class="atool">AWS</span></div></div>
-          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Proves practical mastery of event-driven patterns — one of the most in-demand architectural skills in modern cloud-native engineering.</div></div>
+          <div class="artifact-title">Online Shopping Application — MIU (2021)</div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <div><div class="af-label">Objective</div><div class="af-value">Implement a full-stack e-commerce system with product inventory management, digital shopping cart, and order processing.</div></div>
+            <div><div class="af-label">Process</div><div class="af-value">Designed RESTful API backend with ExpressJS, built Angular frontend, modeled data in MongoDB, and deployed locally for testing with Postman.</div></div>
+            <div><div class="af-label">Tools &amp; Technologies</div><div class="artifact-tools"><span class="atool">ExpressJS</span><span class="atool">Angular</span><span class="atool">MongoDB</span><span class="atool">HTML/CSS</span><span class="atool">Postman</span></div></div>
+          </div>
+          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Illustrates full-cycle MEAN stack development capability — from database schema design to interactive frontend — demonstrating versatility across the entire software stack.</div></div>
         </div>
       </div>
 
+      <!-- 05 -->
       <div class="artifact-card reveal">
         <div class="artifact-card-top"><div class="artifact-num">05</div><div class="artifact-icon">🌐</div></div>
         <div class="artifact-body">
           <div class="artifact-title">Professional Portfolio Website (This Site)</div>
-          <div class="artifact-field"><span class="af-label">Objective</span><span class="af-value">Build and deploy a graduate-level professional portfolio on GitHub Pages satisfying all IWU portfolio requirements.</span></div>
-          <div class="artifact-field"><span class="af-label">Process</span><span class="af-value">Designed site architecture, coded it in HTML/CSS/JS, structured artifacts per IWU guidelines, and deployed via GitHub Pages for public access.</span></div>
-          <div class="artifact-field"><span class="af-label">Tools &amp; Technologies</span><div class="artifact-tools"><span class="atool">HTML/CSS/JS</span><span class="atool">GitHub Pages</span><span class="atool">GitHub</span></div></div>
-          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Demonstrates full-cycle project ownership — from design to deployment — and serves as a living record of professional and academic growth throughout the IWU program.</div></div>
+          <div style="display:flex;flex-direction:column;gap:0.9rem;">
+            <div><div class="af-label">Objective</div><div class="af-value">Design and deploy a graduate-level professional portfolio on GitHub Pages satisfying all IWU portfolio requirements.</div></div>
+            <div><div class="af-label">Process</div><div class="af-value">Structured artifact entries per IWU guidelines (title, objective, process, tools, value proposition), coded in semantic HTML/CSS/JS, and deployed via GitHub Pages.</div></div>
+            <div><div class="af-label">Tools &amp; Technologies</div><div class="artifact-tools"><span class="atool">HTML/CSS/JS</span><span class="atool">GitHub Pages</span><span class="atool">GitHub</span></div></div>
+          </div>
+          <div class="artifact-value-prop"><div class="avp-label">Value Proposition</div><div class="avp-text">Demonstrates full project ownership from design to deployment and serves as a living, evolving record of professional and academic growth throughout the IWU program.</div></div>
         </div>
       </div>
 
@@ -422,31 +542,38 @@
     <h2 class="sec-title reveal">Let's Connect</h2>
     <div class="contact-grid">
       <div class="contact-body reveal">
-        <p>Whether you're a potential collaborator, employer, professor, or fellow student — I'm always open to meaningful conversations about technology, AI, and software engineering.</p>
-        <p>Feel free to reach out through any of the channels below. I'm especially open to discussions around enterprise Java, cloud-native systems, and AI/ML applications in FinTech.</p>
+        <p>Whether you're a potential employer, academic collaborator, or fellow student — I'm always open to meaningful conversations about software engineering, cloud architecture, and AI/ML applications.</p>
+        <p>Feel free to reach out through any of the channels below.</p>
         <div class="contact-links">
-          <a href="https://github.com/davenda" class="clink" target="_blank">
-            <div class="clink-icon">🐙</div>
-            <div class="clink-text"><div class="clink-label">GitHub</div><div class="clink-value">github.com/davenda</div></div>
-          </a>
-          <a href="https://linkedin.com/in/davend" class="clink" target="_blank">
+          <a href="https://www.linkedin.com/in/davend/" class="clink" target="_blank">
             <div class="clink-icon">💼</div>
             <div class="clink-text"><div class="clink-label">LinkedIn</div><div class="clink-value">linkedin.com/in/davend</div></div>
           </a>
-          <a href="mailto:your@email.com" class="clink">
+          <a href="mailto:dawitcareer@gmail.com" class="clink">
             <div class="clink-icon">✉️</div>
-            <div class="clink-text"><div class="clink-label">Email</div><div class="clink-value">your@email.com</div></div>
+            <div class="clink-text"><div class="clink-label">Email</div><div class="clink-value">dawitcareer@gmail.com</div></div>
+          </a>
+          <a href="tel:4697395570" class="clink">
+            <div class="clink-icon">📞</div>
+            <div class="clink-text"><div class="clink-label">Phone</div><div class="clink-value">469-739-5570</div></div>
           </a>
         </div>
       </div>
       <div class="contact-card reveal">
         <h3>Currently Enrolled At</h3>
-        <p>Pursuing a graduate degree at Indiana Wesleyan University with Curricular Practical Training (CPT) authorization tied to my engineering role at Fidelity Investments.</p>
+        <p>Pursuing a graduate degree at Indiana Wesleyan University with Curricular Practical Training (CPT) authorization connected to my engineering role at MUFG Bank via Amdocs Inc.</p>
         <div class="iwu-badge">
           <div class="iwu-icon">🎓</div>
           <div>
             <div class="iwu-name">Indiana Wesleyan University</div>
-            <div class="iwu-prog">Graduate MS Program · CPT Authorization</div>
+            <div class="iwu-prog">Graduate Program · CPT Authorization</div>
+          </div>
+        </div>
+        <div class="iwu-badge">
+          <div class="iwu-icon">🏛️</div>
+          <div>
+            <div class="iwu-name">Maharishi International University</div>
+            <div class="iwu-prog">M.S. Computer Science · 2021–2023</div>
           </div>
         </div>
       </div>
@@ -456,11 +583,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 <strong>Dave</strong> · Professional Portfolio · IWU Graduate Program</div>
+  <div class="footer-copy">© 2026 <strong>Dawit Diriba</strong> · Professional Portfolio · IWU Graduate Program</div>
   <nav class="footer-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#projects">Artifacts</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -469,10 +597,10 @@
 <script>
   const obs = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }),
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
   );
   document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 6) * 0.06}s`;
+    el.style.transitionDelay = `${(i % 5) * 0.07}s`;
     obs.observe(el);
   });
 </script>
