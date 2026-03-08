@@ -55,15 +55,6 @@
       pointer-events: none;
     }
     .hero-text { position: relative; }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      background: #eff6ff; color: var(--accent); font-size: 0.73rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.38rem 1rem; border-radius: 100px; border: 1px solid #bfdbfe;
-      margin-bottom: 1.4rem;
-      opacity: 0; animation: up 0.6s 0.1s var(--ease) forwards;
-    }
-    .hero-tag::before { content: '●'; font-size: 0.45rem; }
     h1.hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.07;
@@ -72,7 +63,14 @@
     }
     h1.hero-name strong { color: var(--accent); }
     .hero-role { font-size: clamp(0.95rem, 1.8vw, 1.15rem); color: var(--gold); font-weight: 500; margin-bottom: 1.4rem; opacity: 0; animation: up 0.6s 0.32s var(--ease) forwards; }
-    .hero-bio { font-size: 0.97rem; color: var(--slate); line-height: 1.85; max-width: 500px; margin-bottom: 1.8rem; opacity: 0; animation: up 0.6s 0.44s var(--ease) forwards; }
+    .hero-vp {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+      border: 1px solid #bfdbfe; border-radius: 12px;
+      padding: 1.25rem 1.5rem; margin-bottom: 1.8rem;
+      opacity: 0; animation: up 0.6s 0.44s var(--ease) forwards;
+    }
+    .hero-vp-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.45rem; }
+    .hero-vp p { font-size: 0.94rem; color: var(--ink-soft); line-height: 1.8; }
     .hero-meta {
       display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;
       opacity: 0; animation: up 0.6s 0.5s var(--ease) forwards;
@@ -144,33 +142,50 @@
     .exp-desc li { font-size: 0.88rem; color: var(--slate); padding-left: 1.1rem; position: relative; line-height: 1.65; }
     .exp-desc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.78rem; top: 0.08rem; }
 
-    /* ── EDUCATION ── */
-    #education { background: var(--mist); }
-    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
-    .edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: all 0.25s var(--ease); }
-    .edu-card:hover { border-color: var(--accent-lt); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(29,78,216,0.08); }
-    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; line-height: 1.3; }
-    .edu-school { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
-    .edu-date { font-size: 0.78rem; color: var(--slate); }
-
     /* ── ARTIFACTS ── */
-    #projects { background: var(--white); }
-    .artifact-note { display: inline-flex; align-items: center; gap: 0.5rem; background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; border-radius: 6px; padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 500; margin-bottom: 2rem; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.5rem; }
-    .artifact-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.25s var(--ease); display: flex; flex-direction: column; }
+    #artifacts { background: var(--mist); }
+    .artifacts-intro { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 2.5rem; display: flex; align-items: flex-start; gap: 1.25rem; }
+    .artifacts-intro-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .artifacts-intro-text p { font-size: 0.9rem; color: var(--slate); line-height: 1.75; }
+    .artifacts-intro-text strong { color: var(--ink); }
+    .artifacts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.5rem; }
+    .artifact-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; transition: all 0.25s var(--ease); display: flex; flex-direction: column;
+    }
     .artifact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: var(--accent-lt); }
-    .artifact-card-top { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); padding: 1.4rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; }
+    .artifact-card-top {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      padding: 1.4rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start;
+    }
     .artifact-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.2); line-height: 1; }
     .artifact-icon { font-size: 1.7rem; }
     .artifact-body { padding: 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
     .artifact-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
-    .af-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.18rem; }
+    .af-row { display: flex; flex-direction: column; gap: 0.12rem; }
+    .af-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
     .af-value { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
-    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.2rem; }
+    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .atool { padding: 0.2rem 0.6rem; border-radius: 100px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.72rem; color: var(--accent); font-weight: 500; }
-    .artifact-value-prop { background: var(--mist); border-radius: 8px; padding: 0.8rem 1rem; margin-top: auto; }
-    .avp-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
+    .artifact-vp { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d; border-radius: 8px; padding: 0.85rem 1rem; margin-top: auto; }
+    .avp-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
     .avp-text { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55; }
+    .artifact-placeholder { opacity: 0.6; }
+    .placeholder-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #f3f4f6; border: 1px dashed #9ca3af; color: #6b7280;
+      border-radius: 100px; padding: 0.2rem 0.75rem; font-size: 0.72rem; font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--white); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .edu-card { background: var(--mist); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: all 0.25s var(--ease); }
+    .edu-card:hover { border-color: var(--accent-lt); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(29,78,216,0.08); }
+    .edu-degree { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; line-height: 1.3; }
+    .edu-school { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+    .edu-date { font-size: 0.78rem; color: var(--slate); }
 
     /* ── CONTACT ── */
     #contact { background: var(--mist); }
@@ -226,6 +241,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#artifacts">Artifacts</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -240,33 +256,37 @@
   <div class="hero-blob"></div>
   <div class="hero-text">
     <h1 class="hero-name">Hi, I'm<br><strong>Dawit Diriba</strong></h1>
-    <p class="hero-role">Senior Software Engineer &amp; Graduate Scholar</p>
-    <p class="hero-bio">
-      Full Stack Developer with 6+ years of expertise designing, building, and maintaining 
-      enterprise-grade web applications and cloud-native systems. Currently at Fidelity 
-      Investments and pursuing graduate studies at Indiana Wesleyan University.
-    </p>
+    <p class="hero-role">Senior Software Engineer · FinTech &amp; Cloud Specialist</p>
+    <div class="hero-vp">
+      <div class="hero-vp-label">Personal Value Proposition</div>
+      <p>
+        With 6+ years building enterprise-grade financial systems at scale, I help FinTech and
+        cloud-native organizations ship resilient, AI-ready platforms — combining deep Java/AWS
+        engineering expertise with graduate-level AI/ML research to deliver systems that perform
+        today and evolve tomorrow.
+      </p>
+    </div>
     <div class="hero-meta">
       <div class="hero-meta-item">📍 <span>Dallas, Texas</span></div>
       <div class="hero-meta-item">📧 <span>dawitcareer@gmail.com</span></div>
-
     </div>
     <div class="hero-actions">
-      <a href="#experience" class="btn btn-blue">View Experience</a>
+      <a href="#artifacts" class="btn btn-blue">View Artifacts</a>
+      <a href="#experience" class="btn btn-ghost">Experience</a>
       <a href="https://www.linkedin.com/in/davend/" class="btn btn-ghost" target="_blank">LinkedIn ↗</a>
     </div>
   </div>
   <div class="hero-card">
     <p class="card-quote">
-      "Experienced across the full software development lifecycle — from initial concept 
-      to final deployment — I combine enterprise engineering with graduate-level 
-      AI and ML research to solve real-world challenges."
+      "I bridge enterprise cloud infrastructure, distributed systems design,
+      and emerging AI research — enabling FinTech teams to build platforms
+      that are scalable, secure, and future-ready."
     </p>
     <div class="card-stats">
-      <div class="c-stat"><div class="c-stat-n">6+</div><div class="c-stat-l">Years of Experience</div></div>
+      <div class="c-stat"><div class="c-stat-n">6+</div><div class="c-stat-l">Years Engineering</div></div>
       <div class="c-stat"><div class="c-stat-n">AWS</div><div class="c-stat-l">Cloud Platform</div></div>
       <div class="c-stat"><div class="c-stat-n">Java</div><div class="c-stat-l">Primary Language</div></div>
-      <div class="c-stat"><div class="c-stat-n">MS</div><div class="c-stat-l">Graduate Degree</div></div>
+      <div class="c-stat"><div class="c-stat-n">AI/ML</div><div class="c-stat-l">Graduate Research</div></div>
     </div>
   </div>
 </section>
@@ -277,36 +297,36 @@
 <section id="about">
   <div class="section-wrap">
     <div class="sec-eyebrow reveal">About Me</div>
-    <h2 class="sec-title reveal">Professional Bio &amp; Value Proposition</h2>
+    <h2 class="sec-title reveal">Professional Bio</h2>
     <div class="about-grid">
       <div class="about-body reveal">
         <p>
-          I am a Senior Software Engineer with over 6 years of expertise designing, building, 
-          and maintaining both web and mobile applications across multiple industries. I am 
-          proficiently adept at all phases of the software development lifecycle — from initial 
+          I am a Senior Software Engineer with over 6 years of expertise designing, building,
+          and maintaining both web and mobile applications across multiple industries. I am
+          proficiently adept at all phases of the software development lifecycle — from initial
           concept to final deployment — and skilled at optimizing application functionality and performance.
         </p>
         <p>
-          My technical stack includes mastery of Spring Boot, Hibernate, Angular, NodeJS, and 
-          advanced cloud technologies including AWS EC2, Lambda, RDS, S3, and EKS. At Fidelity 
-          Investments, I architect and develop multi-tier financial applications, design Java-based 
-          APIs for seamless data movement, and leverage AWS serverless computing to deploy 
+          My technical stack includes mastery of Spring Boot, Hibernate, Angular, NodeJS, and
+          advanced cloud technologies including AWS EC2, Lambda, RDS, S3, and EKS. At Fidelity
+          Investments, I architect and develop multi-tier financial applications, design Java-based
+          APIs for seamless data movement, and leverage AWS serverless computing to deploy
           data-intensive, AI-ready cloud platforms.
         </p>
         <p>
-          I hold a Master of Computer Science from Maharishi International University and a 
-          Bachelor's in Electrical and Computer Engineering from Adama Science and Technology 
-          University. Currently enrolled at Indiana Wesleyan University, I continue advancing 
+          I hold a Master of Computer Science from Maharishi International University and a
+          Bachelor's in Electrical and Computer Engineering from Adama Science and Technology
+          University. Currently enrolled at Indiana Wesleyan University, I continue advancing
           at the cutting edge of AI, machine learning, and data systems.
         </p>
         <div class="value-prop">
-          <div class="value-prop-label">Personal Value Proposition</div>
+          <div class="value-prop-label">What I Bring to FinTech &amp; Cloud Teams</div>
           <p>
-            I bring a powerful combination of enterprise software engineering experience and 
-            graduate-level AI/ML scholarship to every challenge. My unique value lies in 
-            bridging cloud-native infrastructure, distributed systems design, and emerging 
-            AI research — enabling teams to build systems that are not only scalable and 
-            secure today, but positioned for the intelligent systems of tomorrow.
+            I deliver a rare combination: the production engineering depth to build systems that
+            handle real financial workloads, and the AI/ML academic foundation to architect for
+            what comes next. My value to employers lies in closing the gap between cloud-native
+            infrastructure, secure API design, and intelligent data systems — accelerating time-to-market
+            while reducing technical risk.
           </p>
         </div>
       </div>
@@ -440,6 +460,138 @@
 
 <hr class="sec-divider"/>
 
+<!-- ARTIFACTS -->
+<section id="artifacts">
+  <div class="section-wrap">
+    <div class="sec-eyebrow reveal">AIML-500 Portfolio</div>
+    <h2 class="sec-title reveal">Course Artifacts</h2>
+    <p class="sec-sub reveal">Evidence of learning and applied AI/ML skills developed through Indiana Wesleyan University's AIML-500 graduate coursework.</p>
+
+    <div class="artifacts-intro reveal">
+      <div class="artifacts-intro-icon">🎓</div>
+      <div class="artifacts-intro-text">
+        <p><strong>About this section:</strong> Each artifact below was created as part of AIML-500 coursework at Indiana Wesleyan University. Each entry follows the required portfolio format: Title, Objective, Process, Tools used, and an Artifact-Specific Value Proposition explaining its relevance to employers and the AI/ML field.</p>
+      </div>
+    </div>
+
+    <div class="artifacts-grid">
+
+      <!-- Artifact 1 -->
+      <div class="artifact-card artifact-placeholder reveal">
+        <div class="artifact-card-top">
+          <div class="artifact-num">01</div>
+          <div class="artifact-icon">🤖</div>
+        </div>
+        <div class="artifact-body">
+          <span class="placeholder-badge">⏳ Placeholder — Update with actual artifact</span>
+          <div class="artifact-title">AI/ML Concept Exploration</div>
+          <div class="af-row"><div class="af-label">Objective</div><div class="af-value">Explore foundational AI/ML concepts and their application in enterprise software environments.</div></div>
+          <div class="af-row"><div class="af-label">Process</div><div class="af-value">Researched core machine learning paradigms, analyzed real-world use cases, and documented findings with practical engineering context.</div></div>
+          <div class="af-row">
+            <div class="af-label">Tools</div>
+            <div class="artifact-tools"><span class="atool">Python</span><span class="atool">Jupyter</span><span class="atool">ChatGPT</span></div>
+          </div>
+          <div class="artifact-vp">
+            <div class="avp-label">Artifact Value Proposition</div>
+            <div class="avp-text">Demonstrates ability to translate academic AI/ML theory into practical engineering decisions — directly applicable to building intelligent financial systems at scale.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artifact 2 -->
+      <div class="artifact-card artifact-placeholder reveal">
+        <div class="artifact-card-top">
+          <div class="artifact-num">02</div>
+          <div class="artifact-icon">📊</div>
+        </div>
+        <div class="artifact-body">
+          <span class="placeholder-badge">⏳ Placeholder — Update with actual artifact</span>
+          <div class="artifact-title">Data Analysis &amp; Visualization Project</div>
+          <div class="af-row"><div class="af-label">Objective</div><div class="af-value">Apply data analysis techniques to extract actionable insights from a structured dataset.</div></div>
+          <div class="af-row"><div class="af-label">Process</div><div class="af-value">Cleaned and transformed raw data, applied statistical analysis, and created visual dashboards to communicate findings clearly.</div></div>
+          <div class="af-row">
+            <div class="af-label">Tools</div>
+            <div class="artifact-tools"><span class="atool">Python</span><span class="atool">Pandas</span><span class="atool">Matplotlib</span></div>
+          </div>
+          <div class="artifact-vp">
+            <div class="avp-label">Artifact Value Proposition</div>
+            <div class="avp-text">Shows proficiency in data-driven decision making — a critical skill for FinTech teams building real-time analytics and reporting pipelines.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artifact 3 -->
+      <div class="artifact-card artifact-placeholder reveal">
+        <div class="artifact-card-top">
+          <div class="artifact-num">03</div>
+          <div class="artifact-icon">🧠</div>
+        </div>
+        <div class="artifact-body">
+          <span class="placeholder-badge">⏳ Placeholder — Update with actual artifact</span>
+          <div class="artifact-title">Machine Learning Model Implementation</div>
+          <div class="af-row"><div class="af-label">Objective</div><div class="af-value">Build and evaluate a machine learning model to solve a classification or prediction problem.</div></div>
+          <div class="af-row"><div class="af-label">Process</div><div class="af-value">Defined the problem scope, prepared training data, trained and tuned a model, then evaluated performance using standard ML metrics.</div></div>
+          <div class="af-row">
+            <div class="af-label">Tools</div>
+            <div class="artifact-tools"><span class="atool">Python</span><span class="atool">scikit-learn</span><span class="atool">NumPy</span></div>
+          </div>
+          <div class="artifact-vp">
+            <div class="avp-label">Artifact Value Proposition</div>
+            <div class="avp-text">Evidence of hands-on ML engineering capability — directly relevant to cloud teams integrating predictive models into production financial platforms.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artifact 4 -->
+      <div class="artifact-card artifact-placeholder reveal">
+        <div class="artifact-card-top">
+          <div class="artifact-num">04</div>
+          <div class="artifact-icon">🔗</div>
+        </div>
+        <div class="artifact-body">
+          <span class="placeholder-badge">⏳ Placeholder — Update with actual artifact</span>
+          <div class="artifact-title">AI Integration in Cloud Architecture</div>
+          <div class="af-row"><div class="af-label">Objective</div><div class="af-value">Design a cloud-native architecture pattern that incorporates AI/ML model serving into an existing microservices system.</div></div>
+          <div class="af-row"><div class="af-label">Process</div><div class="af-value">Mapped integration touchpoints between Spring Boot microservices and ML inference endpoints, then documented the architecture with AWS deployment considerations.</div></div>
+          <div class="af-row">
+            <div class="af-label">Tools</div>
+            <div class="artifact-tools"><span class="atool">AWS</span><span class="atool">Spring Boot</span><span class="atool">draw.io</span></div>
+          </div>
+          <div class="artifact-vp">
+            <div class="avp-label">Artifact Value Proposition</div>
+            <div class="avp-text">Bridges my enterprise Java/AWS background with AI system design — showing employers I can architect for intelligent workloads, not just traditional APIs.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artifact 5 -->
+      <div class="artifact-card artifact-placeholder reveal">
+        <div class="artifact-card-top">
+          <div class="artifact-num">05</div>
+          <div class="artifact-icon">📝</div>
+        </div>
+        <div class="artifact-body">
+          <span class="placeholder-badge">⏳ Placeholder — Update with actual artifact</span>
+          <div class="artifact-title">Ethics in AI: Research &amp; Reflection</div>
+          <div class="af-row"><div class="af-label">Objective</div><div class="af-value">Examine ethical considerations in AI system design and their implications for responsible engineering practice.</div></div>
+          <div class="af-row"><div class="af-label">Process</div><div class="af-value">Reviewed current literature on AI bias, fairness, and accountability, then synthesized findings into a reflection grounded in real-world engineering scenarios.</div></div>
+          <div class="af-row">
+            <div class="af-label">Tools</div>
+            <div class="artifact-tools"><span class="atool">Research</span><span class="atool">Academic Writing</span></div>
+          </div>
+          <div class="artifact-vp">
+            <div class="avp-label">Artifact Value Proposition</div>
+            <div class="avp-text">Demonstrates that I approach AI engineering with both technical depth and ethical responsibility — essential for teams building AI-powered products that affect real people's finances.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-wrap">
@@ -485,7 +637,6 @@
             <div class="clink-icon">✉️</div>
             <div class="clink-text"><div class="clink-label">Email</div><div class="clink-value">dawitcareer@gmail.com</div></div>
           </a>
-
         </div>
       </div>
       <div class="contact-card reveal">
@@ -512,11 +663,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 <strong>Dawit Diriba</strong> · Professional Portfolio</div>
+  <div class="footer-copy">© 2026 <strong>Dawit Diriba</strong> · Professional Portfolio · AIML-500</div>
   <nav class="footer-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#artifacts">Artifacts</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -531,5 +683,6 @@
     el.style.transitionDelay = `${(i % 5) * 0.07}s`;
     obs.observe(el);
   });
-</script></body>
+</script>
+</body>
 </html>
