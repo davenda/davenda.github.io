@@ -158,25 +158,52 @@
       background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
       padding: 1.4rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start;
     }
-    .artifact-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.2); line-height: 1; }
-    .artifact-icon { font-size: 1.7rem; }
-    .artifact-body { padding: 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
-    .artifact-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
-    .af-row { display: flex; flex-direction: column; gap: 0.12rem; }
-    .af-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-    .af-value { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
-    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-    .atool { padding: 0.2rem 0.6rem; border-radius: 100px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.72rem; color: var(--accent); font-weight: 500; }
-    .artifact-vp { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d; border-radius: 8px; padding: 0.85rem 1rem; margin-top: auto; }
-    .avp-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
-    .avp-text { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.55; }
-    .artifact-placeholder { opacity: 0.6; }
-    .placeholder-badge {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: #f3f4f6; border: 1px dashed #9ca3af; color: #6b7280;
-      border-radius: 100px; padding: 0.2rem 0.75rem; font-size: 0.72rem; font-weight: 500;
-      margin-bottom: 0.5rem;
+    .artifact-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: rgba(255,255,255,0.18); line-height: 1; }
+    .artifact-icon { font-size: 2rem; }
+    .artifact-body { padding: 1.4rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.8rem; }
+    .artifact-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); line-height: 1.25; }
+    .artifact-desc { font-size: 0.88rem; color: var(--slate); line-height: 1.72; }
+    .artifact-tools { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+    .atool { padding: 0.22rem 0.65rem; border-radius: 100px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 0.73rem; color: var(--accent); font-weight: 500; }
+    .artifact-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .artifact-cta { font-size: 0.8rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 0.35rem; }
+    .artifact-type { font-size: 0.72rem; color: var(--slate); background: var(--mist); border: 1px solid var(--border); border-radius: 100px; padding: 0.2rem 0.65rem; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 1.5rem;
     }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--white); border-radius: 18px; max-width: 660px; width: 100%;
+      max-height: 88vh; overflow-y: auto; box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+      animation: up 0.3s var(--ease) forwards;
+    }
+    .modal-top {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      padding: 2rem; border-radius: 18px 18px 0 0;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+    }
+    .modal-top-num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .modal-top-title { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
+    .modal-top-type { font-size: 0.74rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.12); border-radius: 100px; padding: 0.25rem 0.85rem; display: inline-block; }
+    .modal-close { background: rgba(255,255,255,0.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; margin-top: 0.2rem; }
+    .modal-close:hover { background: rgba(255,255,255,0.3); }
+    .modal-body { padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .modal-section { display: flex; flex-direction: column; gap: 0.4rem; }
+    .modal-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); }
+    .modal-text { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.82; }
+    .modal-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .modal-vp { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fcd34d; border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .modal-vp .modal-label { color: var(--gold); }
+    .modal-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; padding-top: 0.25rem; border-top: 1px solid var(--border); }
+    .modal-btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.4rem; border-radius: 7px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .modal-btn-blue { background: var(--accent); color: #fff; }
+    .modal-btn-blue:hover { background: #1e40af; transform: translateY(-1px); }
+    .modal-btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border-dk); }
+    .modal-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── EDUCATION ── */
     #education { background: var(--white); }
@@ -463,48 +490,29 @@
 <!-- ARTIFACTS -->
 <section id="artifacts">
   <div class="section-wrap">
-    <div class="sec-eyebrow reveal">AIML-500 Portfolio</div>
-    <h2 class="sec-title reveal">Course Artifacts</h2>
-    <p class="sec-sub reveal">Evidence of learning and applied AI/ML skills developed through Indiana Wesleyan University's AIML-500 graduate coursework.</p>
+    <div class="sec-eyebrow reveal">AI Projects</div>
+    <h2 class="sec-title reveal">Featured Work</h2>
+    <p class="sec-sub reveal">AI-powered tools and applications built to solve real-world problems.</p>
 
-    <div class="artifacts-intro reveal">
-      <div class="artifacts-intro-icon">🎓</div>
-      <div class="artifacts-intro-text">
-        <p><strong>About this section:</strong> Each artifact was created as part of AIML-500 coursework at Indiana Wesleyan University. Each entry follows the required portfolio format: Title, Objective, Process, Tools used, and an Artifact-Specific Value Proposition explaining its relevance to employers and the AI/ML field.</p>
-      </div>
-    </div>
+    <div class="artifacts-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
 
-    <div class="artifacts-grid">
-
-      <!-- Artifact 1: Stock Market Research Assistant -->
-      <div class="artifact-card reveal" style="max-width: 720px;">
-        <div class="artifact-card-top">
+      <!-- Artifact 01 -->
+      <div class="artifact-card reveal" onclick="openModal()" style="cursor:pointer;">
+        <div class="artifact-card-top" style="background:linear-gradient(135deg,#1d4ed8,#2563eb);padding:1.6rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;">
           <div class="artifact-num">01</div>
           <div class="artifact-icon">📈</div>
         </div>
         <div class="artifact-body">
           <div class="artifact-title">Stock Market Research Assistant</div>
-          <div class="af-row">
-            <div class="af-label">Objective</div>
-            <div class="af-value">Design and build an AI-powered conversational chatbot that helps retail investors and students research stocks, analyze market trends, compare investment options, and understand financial data — all through natural language, without requiring expertise in complex financial platforms.</div>
+          <p class="artifact-desc">An AI-powered conversational chatbot that helps retail investors research stocks, compare investments, and understand financial data — all in plain English.</p>
+          <div class="artifact-tools">
+            <span class="atool">ChatGPT GPT-4o</span>
+            <span class="atool">CustomGPT</span>
+            <span class="atool">Prompt Engineering</span>
           </div>
-          <div class="af-row">
-            <div class="af-label">Process</div>
-            <div class="af-value">Applied the full Design Thinking process (Empathy → Define → Ideate → Prototype → Test). Identified user pain points through empathy mapping, defined the problem statement for retail investors lacking accessible research tools, evaluated four solution approaches, and selected a conversational research assistant as the highest-feasibility option. Prototyped using ChatGPT's CustomGPT builder with a structured 10-question planning framework covering scope, tone, guardrails, and test scenarios. Conducted structured testing across 7 scenarios including stock analysis, comparisons, sector research, financial term explanation, and out-of-scope handling. Iterated based on results — adding risk disclosure requirements, enforcing disclaimer rules, and tuning temperature for consistency.</div>
-          </div>
-          <div class="af-row">
-            <div class="af-label">Tools</div>
-            <div class="artifact-tools">
-              <span class="atool">ChatGPT (GPT-4o)</span>
-              <span class="atool">CustomGPT Builder</span>
-              <span class="atool">NLP / LLM</span>
-              <span class="atool">Design Thinking</span>
-              <span class="atool">Prompt Engineering</span>
-            </div>
-          </div>
-          <div class="artifact-vp">
-            <div class="avp-label">Artifact Value Proposition</div>
-            <div class="avp-text">This project demonstrates my ability to apply AI/ML tools and design thinking to solve a real financial information access problem — directly relevant to FinTech teams building intelligent, user-facing products. It shows I can scope AI solutions responsibly (defining what the bot will and won't do), engineer guardrails into conversational systems, and validate AI behavior through structured test cases — skills that translate directly to production AI feature development at companies like Fidelity Investments.</div>
+          <div class="artifact-footer">
+            <span class="artifact-cta">View Details →</span>
+            <span class="artifact-type">AI Chatbot</span>
           </div>
         </div>
       </div>
@@ -512,6 +520,48 @@
     </div>
   </div>
 </section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="artifactModal" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-top">
+      <div>
+        <div class="modal-top-num">Artifact 01</div>
+        <div class="modal-top-title">Stock Market Research Assistant</div>
+        <div class="modal-top-type">AI Chatbot · Conversational Agent</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-label">Objective</div>
+        <div class="modal-text">Design and build an AI-powered conversational chatbot that helps retail investors and students research stocks, analyze market trends, compare investment options, and understand financial data — all through natural language, without requiring expertise in complex financial platforms.</div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-label">Process</div>
+        <div class="modal-text">Applied the full Design Thinking process (Empathy → Define → Ideate → Prototype → Test). Identified user pain points through empathy mapping — financial data scattered across sites, jargon-heavy content, no affordable research tool. Selected a conversational AI assistant as the highest-feasibility solution after evaluating four alternatives. Prototyped using ChatGPT's CustomGPT builder with a structured 10-question planning framework covering scope, tone, guardrails, and test scenarios. Conducted testing across 7 scenarios: single stock analysis, stock comparisons, sector research, financial term definitions, out-of-scope handling, follow-up context retention, and unknown ticker handling. Iterated based on results — adding mandatory risk disclosures, enforcing disclaimer rules on every analysis response, and tuning temperature settings for consistency.</div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-label">Tools</div>
+        <div class="modal-tools">
+          <span class="atool">ChatGPT (GPT-4o)</span>
+          <span class="atool">CustomGPT Builder</span>
+          <span class="atool">NLP / LLM</span>
+          <span class="atool">Design Thinking</span>
+          <span class="atool">Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="modal-vp">
+        <div class="modal-label">Value Proposition</div>
+        <div class="modal-text">Demonstrates the ability to scope, design, and validate an AI solution end-to-end — from user empathy to production-ready guardrails. Shows practical prompt engineering skills, responsible AI boundary-setting, and structured QA thinking that translates directly to building intelligent features in financial and enterprise software environments.</div>
+      </div>
+      <div class="modal-actions">
+        <a href="https://chatgpt.com/g/g-69adc8e4bb9881919c88a2e6d792ab67-stock-research-analyst" target="_blank" class="modal-btn modal-btn-blue">Try the Bot ↗</a>
+        <button onclick="closeModal()" class="modal-btn modal-btn-ghost">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <hr class="sec-divider"/>
 
@@ -586,7 +636,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 <strong>Dawit Diriba</strong> · Professional Portfolio · AIML-500</div>
+  <div class="footer-copy">© 2026 <strong>Dawit Diriba</strong> · Professional Portfolio</div>
   <nav class="footer-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -606,6 +656,19 @@
     el.style.transitionDelay = `${(i % 5) * 0.07}s`;
     obs.observe(el);
   });
+
+  function openModal() {
+    document.getElementById('artifactModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('artifactModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('artifactModal')) closeModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
