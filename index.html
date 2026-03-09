@@ -191,15 +191,30 @@
     .modal-top-type { font-size: 0.74rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.12); border-radius: 100px; padding: 0.25rem 0.85rem; display: inline-block; }
     .modal-close { background: rgba(255,255,255,0.15); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; margin-top: 0.2rem; }
     .modal-close:hover { background: rgba(255,255,255,0.3); }
-    .modal-body { padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .modal-section { display: flex; flex-direction: column; gap: 0.4rem; }
-    .modal-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); }
-    .modal-text { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.82; }
+    .modal-body { padding: 1.75rem 2rem; display: flex; flex-direction: column; gap: 1.4rem; }
+    .modal-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.45rem; }
+    .modal-label::before { content: ''; display: inline-block; width: 16px; height: 1.5px; background: var(--accent); }
+    /* Objective */
+    .modal-objective { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.75; font-style: italic; border-left: 3px solid var(--accent); padding-left: 1rem; }
+    /* Process steps */
+    .modal-steps { display: flex; flex-direction: column; gap: 0.55rem; }
+    .modal-step { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .modal-step-badge { background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; padding: 0.18rem 0.55rem; border-radius: 100px; flex-shrink: 0; margin-top: 0.15rem; white-space: nowrap; }
+    .modal-step-text { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.65; }
+    /* Test scenarios */
+    .modal-scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+    .modal-scenario { background: var(--mist); border: 1px solid var(--border); border-radius: 7px; padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.5rem; }
+    .modal-scenario::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: 0.75rem; flex-shrink: 0; }
+    /* Tools */
     .modal-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .modal-vp { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fcd34d; border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    /* VP */
+    .modal-vp { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fcd34d; border-radius: 10px; padding: 1.1rem 1.25rem; }
     .modal-vp .modal-label { color: var(--gold); }
+    .modal-vp .modal-label::before { background: var(--gold); }
+    .modal-vp-text { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.72; }
+    /* Actions */
     .modal-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; padding-top: 0.25rem; border-top: 1px solid var(--border); }
-    .modal-btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.4rem; border-radius: 7px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .modal-btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.4rem; border-radius: 7px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
     .modal-btn-blue { background: var(--accent); color: #fff; }
     .modal-btn-blue:hover { background: #1e40af; transform: translateY(-1px); }
     .modal-btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border-dk); }
@@ -533,15 +548,41 @@
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-section">
+
+      <!-- Objective -->
+      <div>
         <div class="modal-label">Objective</div>
-        <div class="modal-text">Design and build an AI-powered conversational chatbot that helps retail investors and students research stocks, analyze market trends, compare investment options, and understand financial data — all through natural language, without requiring expertise in complex financial platforms.</div>
+        <p class="modal-objective">Help retail investors and students research stocks, compare investments, and understand financial data — through plain-English conversation, no financial expertise required.</p>
       </div>
-      <div class="modal-section">
+
+      <!-- Process -->
+      <div>
         <div class="modal-label">Process</div>
-        <div class="modal-text">Applied the full Design Thinking process (Empathy → Define → Ideate → Prototype → Test). Identified user pain points through empathy mapping — financial data scattered across sites, jargon-heavy content, no affordable research tool. Selected a conversational AI assistant as the highest-feasibility solution after evaluating four alternatives. Prototyped using ChatGPT's CustomGPT builder with a structured 10-question planning framework covering scope, tone, guardrails, and test scenarios. Conducted testing across 7 scenarios: single stock analysis, stock comparisons, sector research, financial term definitions, out-of-scope handling, follow-up context retention, and unknown ticker handling. Iterated based on results — adding mandatory risk disclosures, enforcing disclaimer rules on every analysis response, and tuning temperature settings for consistency.</div>
+        <div class="modal-steps">
+          <div class="modal-step"><span class="modal-step-badge">Empathy</span><span class="modal-step-text">Mapped user pain points: financial data scattered across sites, jargon-heavy content, no affordable research tool for everyday investors.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Define</span><span class="modal-step-text">Problem statement: retail investors need a fast, conversational tool to explain stock fundamentals and trends in plain English.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Ideate</span><span class="modal-step-text">Evaluated 4 approaches (live API bot, news aggregator, research assistant, portfolio tracker) — selected conversational assistant as highest feasibility.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Prototype</span><span class="modal-step-text">Built with ChatGPT's CustomGPT builder using a structured 10-question framework covering scope, tone, guardrails, and response format.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Test</span><span class="modal-step-text">Validated across 7 scenarios. Iterated by adding mandatory risk disclosures, enforcing disclaimers on every analysis, and tuning temperature for consistency.</span></div>
+        </div>
       </div>
-      <div class="modal-section">
+
+      <!-- Test Scenarios -->
+      <div>
+        <div class="modal-label">Test Scenarios Covered</div>
+        <div class="modal-scenarios">
+          <div class="modal-scenario">Single stock analysis</div>
+          <div class="modal-scenario">Stock comparisons</div>
+          <div class="modal-scenario">Sector research</div>
+          <div class="modal-scenario">Financial term definitions</div>
+          <div class="modal-scenario">Out-of-scope handling</div>
+          <div class="modal-scenario">Follow-up context retention</div>
+          <div class="modal-scenario">Unknown ticker handling</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div>
         <div class="modal-label">Tools</div>
         <div class="modal-tools">
           <span class="atool">ChatGPT (GPT-4o)</span>
@@ -551,14 +592,19 @@
           <span class="atool">Prompt Engineering</span>
         </div>
       </div>
+
+      <!-- Value Proposition -->
       <div class="modal-vp">
         <div class="modal-label">Value Proposition</div>
-        <div class="modal-text">Demonstrates the ability to scope, design, and validate an AI solution end-to-end — from user empathy to production-ready guardrails. Shows practical prompt engineering skills, responsible AI boundary-setting, and structured QA thinking that translates directly to building intelligent features in financial and enterprise software environments.</div>
+        <p class="modal-vp-text">Demonstrates end-to-end AI solution design — from user empathy to production-ready guardrails. Shows practical prompt engineering, responsible AI scoping, and structured QA thinking applicable to building intelligent features in financial and enterprise software environments.</p>
       </div>
+
+      <!-- Actions -->
       <div class="modal-actions">
         <a href="https://chatgpt.com/g/g-69adc8e4bb9881919c88a2e6d792ab67-stock-research-analyst" target="_blank" class="modal-btn modal-btn-blue">Try the Bot ↗</a>
         <button onclick="closeModal()" class="modal-btn modal-btn-ghost">Close</button>
       </div>
+
     </div>
   </div>
 </div>
