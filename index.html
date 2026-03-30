@@ -585,6 +585,27 @@
         </div>
       </div>
 
+      <!-- Artifact 04 -->
+      <div class="artifact-card reveal" onclick="openModal4()" style="cursor:pointer;">
+        <div class="artifact-card-top" style="background:linear-gradient(135deg,#4c1d95,#7c3aed);padding:1.6rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;">
+          <div class="artifact-num">04</div>
+          <div class="artifact-icon">📰</div>
+        </div>
+        <div class="artifact-body">
+          <div class="artifact-title">AI Pulse: Spring 2026 Industry Newsletter</div>
+          <p class="artifact-desc">A collaborative newsletter analyzing how AI is transforming healthcare, energy infrastructure, and transportation — featuring ElevenLabs, Claros, and Waymo as company spotlights across three industries.</p>
+          <div class="artifact-tools">
+            <span class="atool">Industry Research</span>
+            <span class="atool">Newsletter Design</span>
+            <span class="atool">AI Analysis</span>
+          </div>
+          <div class="artifact-footer">
+            <span class="artifact-cta">View Details →</span>
+            <span class="artifact-type">Group Project</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -841,6 +862,19 @@
     a.click(); URL.revokeObjectURL(url);
   }
 
+
+  function openModal4() {
+    document.getElementById('artifactModal4').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal4() {
+    document.getElementById('artifactModal4').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick4(e) {
+    if (e.target === document.getElementById('artifactModal4')) closeModal4();
+  }
+
 </script><script>
   const obs = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }),
@@ -901,7 +935,7 @@
     a.click(); URL.revokeObjectURL(url);
   }
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeModal2(); closeModal3(); closeLightbox(); }
+    if (e.key === 'Escape') { closeModal(); closeModal2(); closeModal3(); closeModal4(); closeLightbox(); }
     if (e.key === 'ArrowLeft') shiftLightbox(-1);
     if (e.key === 'ArrowRight') shiftLightbox(1);
   });
@@ -1198,5 +1232,113 @@
     a.click(); URL.revokeObjectURL(url);
   }
 </script>
+
+<!-- MODAL 4: AI Pulse Newsletter -->
+<div class="modal-overlay" id="artifactModal4" onclick="handleOverlayClick4(event)">
+  <div class="modal">
+    <div class="modal-top" style="background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 100%);">
+      <div>
+        <div class="modal-top-num">Artifact 04</div>
+        <div class="modal-top-title">AI Pulse: Spring 2026 Industry Newsletter</div>
+        <div class="modal-top-type">Group Project · Newsletter · Industry Research</div>
+      </div>
+      <button class="modal-close" onclick="closeModal4()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div>
+        <div class="modal-label">Introduction</div>
+        <p class="modal-objective">AI is no longer confined to labs or experimental use — it is actively restructuring the core of industries, not just optimizing their edges. This newsletter examines three companies at the frontier of that shift, each operating at a different layer of the emerging AI economy: the application layer, the infrastructure layer, and the physical-world deployment layer.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Description</div>
+        <p class="modal-step-text" style="font-size:0.9rem;line-height:1.78;color:var(--ink-soft);">A professionally designed multi-page newsletter produced as a collaborative group project, analyzing real-world AI applications released or updated within the past month across three industries. Each industry section features a company spotlight, key metrics, real-world use cases, business process impact, and future potential. The newsletter was presented to the class and professor as part of a residency assignment on emerging commercial AI.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Objective</div>
+        <p class="modal-objective">Research and communicate how emerging AI companies and products are transforming business processes and decision-making across healthcare, energy infrastructure, and transportation — in a format accessible to readers without deep AI expertise.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Process</div>
+        <div class="modal-steps">
+          <div class="modal-step"><span class="modal-step-badge">Research</span><span class="modal-step-text">Reviewed industry leader materials from the residency, then researched AI applications released or updated within the past month, narrowing focus to three industries and three companies: ElevenLabs (Healthcare), Claros (Energy), and Waymo (Transportation).</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Analyze</span><span class="modal-step-text">For each company, analyzed how their AI product transforms business processes — covering operational impact, key metrics, real-world use cases, and future potential.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Synthesize</span><span class="modal-step-text">Developed a cross-industry analysis showing how the three companies represent interconnected layers of the AI economy — application, infrastructure, and physical deployment.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Design</span><span class="modal-step-text">Formatted findings as a structured, visually engaging newsletter using AI tools, with data visualizations, company spotlights, metric callouts, and a conclusions section.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Present</span><span class="modal-step-text">Presented the newsletter to classmates and the professor as part of a residency group project, discussing findings and responding to questions on AI industry trends.</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">Industries & Companies Covered</div>
+        <div class="modal-scenarios">
+          <div class="modal-scenario">Healthcare — ElevenLabs</div>
+          <div class="modal-scenario">Energy & Infrastructure — Claros</div>
+          <div class="modal-scenario">Transportation — Waymo</div>
+          <div class="modal-scenario">Cross-industry AI economy analysis</div>
+          <div class="modal-scenario">Business process transformation</div>
+          <div class="modal-scenario">Emerging AI investment trends</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">Tools &amp; Technologies Used</div>
+        <div class="modal-tools">
+          <span class="atool">Newsletter Design</span>
+          <span class="atool">AI-Assisted Writing</span>
+          <span class="atool">Industry Research</span>
+          <span class="atool">Data Visualization</span>
+          <span class="atool">Collaborative Writing</span>
+        </div>
+      </div>
+
+      <div class="modal-vp">
+        <div class="modal-label">Value Proposition</div>
+        <div style="display:flex;flex-direction:column;gap:0.85rem;margin-top:0.3rem;">
+          <div>
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Unique Value</div>
+            <p class="modal-vp-text">Rather than treating each industry in isolation, this newsletter identifies a unifying insight: ElevenLabs, Claros, and Waymo each represent a distinct layer of the same AI economy — application, infrastructure, and physical deployment — and they are interdependent. Waymo's vehicles run on compute that Claros is making more efficient, and ElevenLabs demonstrates what AI-driven interfaces look like once that infrastructure is in place. That systems-level framing distinguishes this analysis from surface-level industry roundups.</p>
+          </div>
+          <div style="border-top:1px solid #fcd34d;padding-top:0.85rem;">
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Relevance</div>
+            <p class="modal-vp-text">The ability to monitor emerging AI developments, synthesize findings across industries, and communicate them clearly to a non-technical audience is a critical skill for any engineer or leader working in AI. This artifact demonstrates research depth, cross-domain thinking, and professional communication — all directly applicable to technical strategy and stakeholder engagement roles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">References</div>
+        <p style="font-size:0.84rem;color:var(--slate);line-height:1.9;">
+          ElevenLabs Newsroom (2026). <em>ElevenLabs company and product updates.</em><br>
+          Claros Technical Brief &amp; Funding Announcement (March 19, 2026). <em>Claros $30M seed round.</em> General Catalyst &amp; Red Cell Partners.<br>
+          Waymo Newsroom (2026). <em>Waymo safety report and expansion updates.</em><br>
+          The Driverless Digest (2025). <em>2025 year in review.</em><br>
+          Morgan Stanley AV Report (2026). <em>Autonomous vehicle market analysis.</em>
+        </p>
+      </div>
+
+      <div>
+        <div class="modal-label">Downloadable Deliverable</div>
+        <a href="P2_Newsletter_final__1_.pdf" target="_blank" class="modal-download">
+          <span class="modal-download-icon">📰</span>
+          <div>
+            <div class="modal-download-name">AI_Pulse_Spring_2026_Newsletter.pdf</div>
+            <div class="modal-download-desc">Full 10-page newsletter — industry analysis across healthcare, energy, and transportation with data visualizations and company spotlights</div>
+          </div>
+          <span class="modal-download-btn">View PDF ↗</span>
+        </a>
+      </div>
+
+      <div class="modal-actions">
+        <button onclick="closeModal4()" class="modal-btn modal-btn-ghost">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
