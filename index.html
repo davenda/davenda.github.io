@@ -328,6 +328,27 @@
         </div>
       </div>
 
+      <!-- Artifact 05 -->
+      <div class="artifact-card reveal" onclick="openModal5()" style="cursor:pointer;">
+        <div class="artifact-card-top" style="background:linear-gradient(135deg,#7f1d1d,#dc2626);padding:1.6rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;">
+          <div class="artifact-num">05</div>
+          <div class="artifact-icon">⚖️</div>
+        </div>
+        <div class="artifact-body">
+          <div class="artifact-title">AI Ethics: The Ibrahim Diallo Case</div>
+          <p class="artifact-desc">A critical thinking analysis of the case where an automated HR system wrongfully terminated a software developer — examining accountability gaps, lack of human override, and absence of transparency in automated decision-making.</p>
+          <div class="artifact-tools">
+            <span class="atool">AI Ethics</span>
+            <span class="atool">Critical Analysis</span>
+            <span class="atool">Case Study</span>
+          </div>
+          <div class="artifact-footer">
+            <span class="artifact-cta">View Details →</span>
+            <span class="artifact-type">Written Analysis</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -955,5 +976,111 @@
 </div>
 
 <script src="portfolio.js"></script>
+
+<!-- MODAL 5: AI Ethics -->
+<div class="modal-overlay" id="artifactModal5" onclick="handleOverlayClick5(event)">
+  <div class="modal">
+    <div class="modal-top" style="background:linear-gradient(135deg,#7f1d1d 0%,#dc2626 100%);">
+      <div>
+        <div class="modal-top-num">Artifact 05</div>
+        <div class="modal-top-title">AI Ethics: The Ibrahim Diallo Case</div>
+        <div class="modal-top-type">Critical Thinking Analysis · AI Ethics</div>
+      </div>
+      <button class="modal-close" onclick="closeModal5()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div>
+        <div class="modal-label">Introduction</div>
+        <p class="modal-objective">As AI and automation take on greater roles in consequential decisions — hiring, firing, lending, healthcare — the ethical frameworks governing those systems matter as much as the technology itself. The Ibrahim Diallo case is a striking example of what happens when automation is deployed without human safeguards, and it raises questions every engineer building such systems should be able to answer.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Description</div>
+        <p class="modal-step-text" style="font-size:0.9rem;line-height:1.78;color:var(--ink-soft);">A structured critical thinking assignment analyzing the case of Ibrahim Diallo, a software developer whose automated HR system wrongfully terminated him after a manager failed to renew his contract in the system. The assignment identifies three core ethical issues — lack of human override capability, absence of transparency and communication, and an accountability gap — and proposes concrete solutions for each, grounded in ethical principles for responsible AI system design.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Objective</div>
+        <p class="modal-objective">Apply critical thinking and AI ethics frameworks to a real-world case of automated decision-making gone wrong — identifying systemic failures, examining underlying assumptions, and proposing practical safeguards that center human dignity and accountability.</p>
+      </div>
+
+      <div>
+        <div class="modal-label">Process</div>
+        <div class="modal-steps">
+          <div class="modal-step"><span class="modal-step-badge">Select</span><span class="modal-step-text">Chose the Ibrahim Diallo case for its clear illustration of how rigid automation without human oversight can cause real harm — even without any malicious intent.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Analyze</span><span class="modal-step-text">Identified three distinct ethical failures: no override capability for senior managers, no notification or explanation to the affected employee, and diffused accountability with no named responsible party.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Challenge</span><span class="modal-step-text">Questioned initial assumptions — shifting from "the manager should have fixed it" to recognizing the deeper design flaw: the system was built with no mechanism for human correction at all.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Propose</span><span class="modal-step-text">Developed concrete solutions for each issue: a two-manager approval step with a 48-hour review window, plain-language notifications with a human point of contact, and mandatory audit trails linked to a named accountability owner.</span></div>
+          <div class="modal-step"><span class="modal-step-badge">Reflect</span><span class="modal-step-text">Synthesized the analysis into a personal framework: before building any system that affects people, ask — Can a human override this? Is the person affected informed? And is someone clearly accountable?</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">Ethical Issues Examined</div>
+        <div class="modal-scenarios">
+          <div class="modal-scenario">No human override capability</div>
+          <div class="modal-scenario">No notification to employee</div>
+          <div class="modal-scenario">Accountability gap</div>
+          <div class="modal-scenario">Automation without safeguards</div>
+          <div class="modal-scenario">Design vs. implementation failure</div>
+          <div class="modal-scenario">Responsible AI deployment</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">Tools &amp; Technologies Used</div>
+        <div class="modal-tools">
+          <span class="atool">Critical Thinking Frameworks</span>
+          <span class="atool">AI Ethics Analysis</span>
+          <span class="atool">Case Study Method</span>
+          <span class="atool">Microsoft Word</span>
+        </div>
+      </div>
+
+      <div class="modal-vp">
+        <div class="modal-label">Value Proposition</div>
+        <div style="display:flex;flex-direction:column;gap:0.85rem;margin-top:0.3rem;">
+          <div>
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Unique Value</div>
+            <p class="modal-vp-text">This analysis goes beyond labeling the Diallo case as a system error. It traces each failure back to a deliberate design choice and argues that the absence of override capability, transparency, and accountability are not oversights but ethical violations baked into how the system was architected. That framing shifts the question from what went wrong to who is responsible for building it this way — which is the more important question for anyone building AI systems today.</p>
+          </div>
+          <div style="border-top:1px solid #fcd34d;padding-top:0.85rem;">
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Relevance</div>
+            <p class="modal-vp-text">Engineers who build systems that affect people's lives — employment, credit, healthcare, access — carry an ethical responsibility that goes beyond making the code work. This artifact demonstrates the ability to think critically about that responsibility and articulate concrete safeguards, a skill that is increasingly expected in enterprise AI roles and essential for leading teams building consequential software.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="modal-label">References</div>
+        <p style="font-size:0.84rem;color:var(--slate);line-height:1.9;">
+          Diallo, I. <em>The machine fired me.</em> <a href="https://idiallo.com/blog/when-a-machine-fired-me" target="_blank" style="color:var(--accent);">idiallo.com</a><br>
+          AI Incident Database. <em>Incident #35.</em> <a href="https://incidentdatabase.ai/cite/35/" target="_blank" style="color:var(--accent);">incidentdatabase.ai</a><br>
+          The Register (2018). <em>Software engineer fired, shut out of office for three weeks by machine.</em> <a href="https://www.theregister.com/2018/06/22/software_engineer_fired_by_machine/" target="_blank" style="color:var(--accent);">theregister.com</a><br>
+          The Conversation (2018). <em>This man was fired by a computer — real AI could have saved him.</em> <a href="https://theconversation.com/this-man-was-fired-by-a-computer-real-ai-could-have-saved-him-99059" target="_blank" style="color:var(--accent);">theconversation.com</a>
+        </p>
+      </div>
+
+      <div>
+        <div class="modal-label">Downloadable Deliverable</div>
+        <a href="#" onclick="downloadEthics(event)" class="modal-download">
+          <span class="modal-download-icon">📄</span>
+          <div>
+            <div class="modal-download-name">AI_Ethics_Ibrahim_Diallo_Analysis.docx</div>
+            <div class="modal-download-desc">Full critical thinking assignment — case summary, three ethical issues with proposed solutions, and personal reflection</div>
+          </div>
+          <span class="modal-download-btn">Download ↓</span>
+        </a>
+      </div>
+
+      <div class="modal-actions">
+        <button onclick="closeModal5()" class="modal-btn modal-btn-ghost">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
