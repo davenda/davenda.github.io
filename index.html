@@ -14,6 +14,7 @@
   <a href="#hero" class="nav-brand">Dawit<em>.</em></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#audience">Audience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#artifacts">Artifacts</a></li>
@@ -114,6 +115,47 @@
         <div class="info-card"><div class="info-card-label">Location</div><div class="info-card-value">Dallas, Texas 75230</div></div>
         <div class="info-card"><div class="info-card-label">Focus Areas</div><div class="info-card-value">Cloud · Microservices · AI/ML · FinTech</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
+
+<!-- TARGET AUDIENCE -->
+<section id="audience" style="background:var(--mist);padding:3.5rem 5vw;">
+  <div class="section-wrap">
+    <div class="sec-eyebrow reveal">Portfolio Purpose</div>
+    <h2 class="sec-title reveal">Target Audience</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:1.75rem;">
+
+      <div class="skill-card reveal" style="border-left:3px solid var(--accent);">
+        <div class="skill-card-head">
+          <div class="skill-icon">🏦</div>
+          <div class="skill-cat">FinTech & Financial Services Employers</div>
+        </div>
+        <p style="font-size:0.86rem;color:var(--slate);line-height:1.75;">Engineering leaders and hiring managers at financial institutions, investment platforms, and FinTech companies — who need engineers capable of building secure, compliant, AI-ready systems at scale. This portfolio demonstrates production-grade Java/AWS engineering alongside applied AI/ML research directly relevant to financial technology.</p>
+      </div>
+
+      <div class="skill-card reveal" style="border-left:3px solid var(--accent);">
+        <div class="skill-card-head">
+          <div class="skill-icon">☁️</div>
+          <div class="skill-cat">Cloud-Native & Enterprise Engineering Teams</div>
+        </div>
+        <p style="font-size:0.86rem;color:var(--slate);line-height:1.75;">Technical teams building microservices, cloud infrastructure, and API-driven platforms — who need engineers with deep hands-on AWS, containerization, and CI/CD experience. The experience section and skills profile speak directly to this audience, backed by measurable outcomes from Fidelity Investments and MUFG Bank.</p>
+      </div>
+
+      <div class="skill-card reveal" style="border-left:3px solid var(--accent);">
+        <div class="skill-card-head">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-cat">AI/ML-Forward Organizations</div>
+        </div>
+        <p style="font-size:0.86rem;color:var(--slate);line-height:1.75;">Product and engineering teams actively integrating AI into their platforms — who need engineers who understand AI not just conceptually but in terms of responsible design, system integration, and real-world constraints. The artifact portfolio documents this growing capability through hands-on AI projects, ethical analysis, and industry research.</p>
+      </div>
+
+    </div>
+    <div style="margin-top:1.5rem;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;" class="reveal">
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Why This Portfolio Is Relevant to You</div>
+      <p style="font-size:0.88rem;color:var(--slate);line-height:1.8;">This portfolio bridges two worlds that rarely overlap: the production engineering rigor of enterprise financial systems, and the emerging discipline of applied AI/ML. For organizations navigating the transition from traditional software to AI-integrated platforms, that combination is increasingly rare and increasingly valuable. Every artifact and experience entry in this portfolio is selected to demonstrate readiness to contribute at that intersection — not just as a student of AI, but as a practicing engineer who builds production systems every day.</p>
     </div>
   </div>
 </section>
@@ -892,6 +934,15 @@
       </div>
 
       <div>
+        <div class="modal-label">Key Findings</div>
+        <div class="modal-steps">
+          <div class="modal-step"><span class="modal-step-badge" style="background:#7c3aed;">Finding 1</span><span class="modal-step-text">AI is not optimizing industry processes at the edges — it is replacing their foundational assumptions. ElevenLabs eliminates the need for a human to answer a hospital phone; Claros redesigns how electricity physically reaches a chip; Waymo removes the driver entirely. These are structural replacements, not incremental improvements.</span></div>
+          <div class="modal-step"><span class="modal-step-badge" style="background:#7c3aed;">Finding 2</span><span class="modal-step-text">The three companies represent interconnected layers of the same AI economy: ElevenLabs is the application layer, Waymo is the physical-world deployment layer, and Claros is the infrastructure layer both depend on. Waymo's vehicles require compute; that compute runs in data centers losing 40% of electricity to inefficiency; Claros solves that problem. The industries are not independent — they are a stack.</span></div>
+          <div class="modal-step"><span class="modal-step-badge" style="background:#7c3aed;">Finding 3</span><span class="modal-step-text">The gap between AI adopters and non-adopters is widening faster than most organizations anticipate. For decision-makers, the question is no longer whether to engage with AI — it is whether their organization is building the understanding and partnerships to engage effectively before competitors do.</span></div>
+        </div>
+      </div>
+
+      <div>
         <div class="modal-label">Objective</div>
         <p class="modal-objective">Research and communicate how emerging AI companies and products are transforming business processes and decision-making across healthcare, energy infrastructure, and transportation — in a format accessible to readers without deep AI expertise.</p>
       </div>
@@ -976,6 +1027,7 @@
 </div>
 
 <script src="portfolio.js"></script>
+<script src="modal5_fix.js"></script>
 
 <!-- MODAL 5: AI Ethics -->
 <div class="modal-overlay" id="artifactModal5" onclick="handleOverlayClick5(event)">
